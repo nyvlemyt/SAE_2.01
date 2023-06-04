@@ -1,3 +1,4 @@
+package Test;
 import ardoise.*;
 
 public class TestArdoise {
