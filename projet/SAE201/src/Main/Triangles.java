@@ -51,8 +51,6 @@ public class Triangles extends Forme {
 
 	@Override
 	public String typeForme() {
-		
-		
 		return "T";
 	}
 

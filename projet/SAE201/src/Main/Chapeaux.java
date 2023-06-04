@@ -3,30 +3,53 @@ package Main;
 import java.util.ArrayList;
 
 import ardoise.Forme;
+import ardoise.PointPlan;
 import ardoise.Segment;
 
 public class Chapeaux extends Forme {
 
+	private PointPlan point1 ;
+	private PointPlan point2 ;
+	private PointPlan point3 ;
+
 	public Chapeaux() {
-		// TODO Auto-generated constructor stub
+		
+		super();
+		this.point1 = new PointPlan(0,0) ;
+		this.point2 = new PointPlan(0,0) ;
+		this.point3 = new PointPlan(0,0) ;
+	}
+	
+	public Chapeaux(String nom, PointPlan p1, PointPlan p2, PointPlan p3) {
+		
+		super(nom) ;
+		this.point1 = p1 ;
+		this.point2 = p2 ;
+		this.point3 = p3 ;
 	}
 
 	@Override
 	public void deplacer(int arg0, int arg1) {
-		// TODO Auto-generated method stub
 		
+		this.point1.deplacer(arg0, arg1);
+		this.point2.deplacer(arg0, arg1);
+		this.point3.deplacer(arg0, arg1);
+
 	}
 
 	@Override
 	public ArrayList<Segment> dessiner() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ArrayList<Segment> liste = new ArrayList<Segment>(2) ;
+		liste.add(new Segment(this.point1,this.point2)) ;
+		liste.add(new Segment(this.point2,this.point3)) ;
+		
+		return liste ;
 	}
 
 	@Override
 	public String typeForme() {
-		// TODO Auto-generated method stub
-		return null;
+		return "C";
 	}
 
 }
