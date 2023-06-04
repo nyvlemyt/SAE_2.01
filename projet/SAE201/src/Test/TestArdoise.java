@@ -41,13 +41,10 @@ public class TestArdoise {
 		
 		ardoise.ajouterForme(tour);
 		ardoise.ajouterForme(corpsMaison); 
-<<<<<<< HEAD
-		ardoise.ajouterForme(porteMaison); 
-=======
 		ardoise.ajouterForme(porteMaison);
 		ardoise.ajouterForme(montagne1);
 		ardoise.ajouterForme(montagne2);
->>>>>>> f9c78426bbc514c9e319e6865c104e41ed60581d
+
 
 		ardoise.test();
 		
