@@ -10,10 +10,7 @@ public class TestArdoise {
 	{
 		
 		Ardoise ardoise = new Ardoise();
-		
-<<<<<<< HEAD
-	
-=======
+
 		//Tour
 		PointPlan p1 = new PointPlan(9,198);
 		PointPlan p2 = new PointPlan(20,100);
@@ -32,7 +29,7 @@ public class TestArdoise {
 		ardoise.ajouterForme(tour);
 		ardoise.ajouterForme(corpsMaison); 
 		ardoise.ajouterForme(porteMaison); 
->>>>>>> 4e392d8bd0fbf607cf261159e143dd77dcd75f4e
+
 		ardoise.test();
 		
 	}
