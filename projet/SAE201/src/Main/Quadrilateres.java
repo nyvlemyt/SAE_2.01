@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import ardoise.Forme;
 import ardoise.Segment;
 
-public class Chapeau extends Forme  {
+public class Quadrilateres extends Forme {
 
-	public Chapeau() {
+	public Quadrilateres() {
 		// TODO Auto-generated constructor stub
 	}
 
