@@ -92,9 +92,13 @@ public class TestArdoise {
 		
 		ardoise.ajouterForme(tour);
 		ardoise.ajouterForme(corpsMaison); 
+<<<<<<< HEAD
+		ardoise.ajouterForme(porteMaison); 
+=======
 		ardoise.ajouterForme(porteMaison);
 		ardoise.ajouterForme(montagne1);
 		ardoise.ajouterForme(montagne2);
+<<<<<<< HEAD
 		ardoise.ajouterForme(toitMaison);
 		ardoise.ajouterForme(oiseau1);
 		ardoise.ajouterForme(oiseau2);
@@ -103,6 +107,10 @@ public class TestArdoise {
 		ardoise.ajouterForme(branche2);
 		ardoise.ajouterForme(branche3);
 		ardoise.ajouterForme(branche4);
+=======
+>>>>>>> f9c78426bbc514c9e319e6865c104e41ed60581d
+
+>>>>>>> 10a031286c94b211518886359a3bbfa7e9540e1f
 		ardoise.test();
 		
 	}
