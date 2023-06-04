@@ -50,8 +50,12 @@ public class Triangles extends Forme {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public String typeForme() 
 	{
+=======
+	public String typeForme() {
+>>>>>>> 740f107a6bbf855e861f12f857c16204fcbf4b2d
 		return "T";
 	}
 
