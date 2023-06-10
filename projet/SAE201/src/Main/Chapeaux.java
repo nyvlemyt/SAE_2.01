@@ -13,25 +13,40 @@ public class Chapeaux extends Forme {
 	public Chapeaux() {
 		
 		super();
-		this.point1 = new PointPlan(0,0) ;
-		this.point2 = new PointPlan(0,0) ;
-		this.point3 = new PointPlan(0,0) ;
+		this.setPoint1(new PointPlan(0,0)) ;
+		this.setPoint2(new PointPlan(0,0)) ;
+		this.setPoint3(new PointPlan(0,0)) ;
 	}
 	
 	public Chapeaux(String nom, PointPlan p1, PointPlan p2, PointPlan p3) {
 		
 		super(nom) ;
-		this.point1 = p1 ;
-		this.point2 = p2 ;
-		this.point3 = p3 ;
+		this.setPoint1(p1) ;
+		this.setPoint2(p2) ;
+		this.setPoint3(p3) ;
+	}
+	
+	public Chapeaux(String nom, PointPlan p1, PointPlan p3, int sens)
+	{
+		super(nom) ;
+		this.setPoint1(p1) ;
+		this.setPoint3(p3) ;
+		
+		int x_milieu = (p1.getAbscisse() + p3.getAbscisse()) / 2;
+		if (sens == 1) 
+				this.setPoint2(new PointPlan(x_milieu, p3.getOrdonnee()/2  )); 
+		else 
+		this.setPoint2(new PointPlan(x_milieu, p3.getOrdonnee() + p3.getOrdonnee()/2)); 
+		
+		
 	}
 	
 	public Chapeaux(Chapeaux copie)
 	{
 		super(copie.getNomForme());
-		this.point1 = copie.getPoint1();
-		this.point2 = copie.getPoint2();
-		this.point3 = copie.getPoint3();
+		this.setPoint1(copie.getPoint1());
+		this.setPoint2(copie.getPoint2());
+		this.setPoint3(copie.getPoint3());
 	}
 
 	//getters : 

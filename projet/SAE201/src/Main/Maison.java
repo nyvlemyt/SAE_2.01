@@ -13,15 +13,15 @@ public class Maison extends FormesComposees{
 	public Maison() 
 	{
 		super();
-		this.porte = new Quadrilateres();
-		this.contour = new Quadrilateres();
-		this.toit = new Chapeaux(); 
+		this.setPorte(new Quadrilateres());
+		this.setContour(new Quadrilateres());
+		this.setToit(new Chapeaux()); 
 	}
 
 	public Maison( String unnom, Quadrilateres unContour)
 	{
 		super(unnom);
-		this.contour = unContour; 
+		this.setContour(unContour); 
 		
 		
 	}
@@ -29,15 +29,14 @@ public class Maison extends FormesComposees{
 	public Maison(String nom, Quadrilateres unePorte, Quadrilateres leContour, Chapeaux leToit)
 	{
 		super(nom);
-		this.porte = unePorte;
-		this.contour = leContour;
-		this.toit = leToit; 
+		this.setPorte(unePorte);
+		this.setContour(leContour);
+		this.setToit(leToit); 
 	}
 	
 	@Override
 	public void deplacer(int arg0, int arg1) 
 	{
-		
 		
 	}
 
@@ -45,6 +44,38 @@ public class Maison extends FormesComposees{
 	public ArrayList<Segment> dessiner() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	//getters :
+	public Quadrilateres getContour() 
+	{
+		return contour;
+	}
+
+	public Quadrilateres getPorte() 
+	{
+		return porte;
+	}
+
+	public Chapeaux getToit()
+	{
+		return toit;
+	}
+
+	//setters : 
+	public void setPorte(Quadrilateres unePorte)
+	{
+		this.porte = unePorte;
+	}
+	
+	public void setContour(Quadrilateres unContour) 
+	{
+		this.contour = unContour;
+	}
+	
+	public void setToit(Chapeaux unToit) 
+	{
+		this.toit = unToit;
 	}
 
 }
