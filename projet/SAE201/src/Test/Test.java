@@ -1,11 +1,17 @@
 package Test;
 import Main.*;
+<<<<<<< HEAD
 import ardoise.*; 
+=======
+import ardoise.Ardoise;
+import ardoise.PointPlan;
+>>>>>>> 823f834e69c4ae9988030db1139478f596f41126
 public class Test {
 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		Ardoise ardoise = new Ardoise();
 		
 		
@@ -42,6 +48,16 @@ public class Test {
 				
 				ardoise.ajouterForme(etoile);
 				ardoise.test() ;
+=======
+
+		Ardoise ardoise = new Ardoise();
+		
+		PointPlan p16 = new PointPlan(88,23);
+		PointPlan p18 = new PointPlan(98,23);
+		Chapeaux oiseau1 = new Chapeaux("essaie", p16,p18, 1); 
+	    ardoise.ajouterForme(oiseau1);
+		ardoise.test();
+>>>>>>> 823f834e69c4ae9988030db1139478f596f41126
 	}
 
 }

@@ -15,29 +15,29 @@ public class Quadrilateres extends Forme {
 	public Quadrilateres() 
 	{
 		super();
-		this.hautGauche = new PointPlan(0,0);
-		this.basGauche = new PointPlan(0,0);
-		this.hautDroit = new PointPlan(0,0);
-		this.basDroit = new PointPlan(0,0) ;
+		this.setHautGauche(new PointPlan(0,0));
+		this.setBasGauche(new PointPlan(0,0));
+		this.setHautDroit(new PointPlan(0,0));
+		this.setBasDroit(new PointPlan(0,0)) ;
 	}
 	// Constructeur qui initialise un nom et les points du quadrilatères : 
 	public Quadrilateres(String nom, PointPlan p, PointPlan p0) 
 	{
 		super(nom);
-		this.hautGauche = p;
-		this.basGauche = new PointPlan(p.getAbscisse(),p0.getOrdonnee());
-		this.hautDroit = new PointPlan(p0.getAbscisse(),p.getOrdonnee()); 
-		this.basDroit = p0;
+		this.setHautGauche(p);
+		this.setBasGauche(new PointPlan(p.getAbscisse(),p0.getOrdonnee()));
+		this.setHautDroit(new PointPlan(p0.getAbscisse(),p.getOrdonnee())); 
+		this.setBasDroit(p0);
 	}
 	
 	// Constructeur par copie : 
 	public Quadrilateres(Quadrilateres copie)
 	{
 		super(copie.getNomForme());
-		this.hautGauche = copie.getHautGauche();
-		this.basGauche = copie.getBasGauche();
-		this.hautDroit = copie.getHautDroit();
-		this.basDroit = copie.getBasDroit();
+		this.setHautGauche(copie.getHautGauche());
+		this.setBasGauche(copie.getBasGauche());
+		this.setHautDroit(copie.getHautDroit());
+		this.setBasDroit(copie.getBasDroit());
 	}
 	//getters : 
 	public PointPlan getHautGauche() 
