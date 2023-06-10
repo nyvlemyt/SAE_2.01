@@ -11,7 +11,6 @@ public abstract class FormesComposees extends Forme{
 		super(nom); 
 	}
 	
-	@Override
 	public String typeForme() 
 	{
 		return "GF";
