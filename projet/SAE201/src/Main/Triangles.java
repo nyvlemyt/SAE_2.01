@@ -26,6 +26,49 @@ public class Triangles extends Forme {
 		this.point2 = p2 ;
 		this.point3 = p3 ;
 	}
+	
+	// Constructeur par copie : 
+		public Triangles(Triangles nouvTriangles)
+		{
+			super(nouvTriangles.getNomForme());
+			this.point1 = nouvTriangles.getPoint1();
+			this.point2 = nouvTriangles.getPoint2();
+			this.point3 = nouvTriangles.getPoint3();
+			
+		}
+	
+	//getters : 
+		public PointPlan getPoint1() 
+		{
+			return this.point1;
+		}
+		
+		public PointPlan getPoint2() 
+		{
+			return this.point2;
+		}
+		
+		public PointPlan getPoint3() 
+		{
+			return this.point3;
+		}
+		
+		//setters : 
+		public void setPoint1(PointPlan nouvPoint1) 
+		{
+			this.point1 = nouvPoint1;
+		}
+		
+		public void setPoint2(PointPlan nouvPoint2) 
+		{
+			this.point2 = nouvPoint2;
+		}
+		
+		public void setPoint3(PointPlan nouvPoint3) 
+		{
+			this.point3 = nouvPoint3;
+		}
+		
 
 	@Override
 	public void deplacer(int arg0, int arg1) {
