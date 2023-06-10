@@ -61,24 +61,24 @@ public class Quadrilateres extends Forme {
 	}
 	
 	//setters : 
-	public void setHautGauche(PointPlan nouveauPoint) 
+	public void setHautGauche(PointPlan p1) 
 	{
-		this.hautGauche = nouveauPoint;
+		this.hautGauche = p1;
 	}
 	
-	public void setBasGauche(PointPlan nouveauPoint) 
+	public void setBasGauche(PointPlan p2) 
 	{
-		this.basGauche = nouveauPoint;
+		this.basGauche = p2;
 	}
 	
-	public void setHautDroit(PointPlan nouveauPoint) 
+	public void setHautDroit(PointPlan p3) 
 	{
-		this.hautDroit = nouveauPoint;
+		this.hautDroit = p3;
 	}
 	
-	public void setBasDroit(PointPlan nouveauPoint) 
+	public void setBasDroit(PointPlan p4) 
 	{
-		this.basDroit = nouveauPoint;
+		this.basDroit = p4;
 	}
 	
 	@Override

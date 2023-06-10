@@ -18,12 +18,20 @@ public class Maison extends FormesComposees{
 		this.toit = new Chapeaux(); 
 	}
 
+	public Maison( String unnom, Quadrilateres unContour)
+	{
+		super(unnom);
+		this.contour = unContour; 
+		
+		
+	}
+	
 	public Maison(String nom, Quadrilateres unePorte, Quadrilateres leContour, Chapeaux leToit)
 	{
 		super(nom);
-		this.porte = new Quadrilateres();
-		this.contour = new Quadrilateres();
-		this.toit = new Chapeaux(); 
+		this.porte = unePorte;
+		this.contour = leContour;
+		this.toit = leToit; 
 	}
 	
 	@Override
