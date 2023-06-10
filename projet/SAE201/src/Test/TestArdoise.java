@@ -1,9 +1,7 @@
 package Test;
 import java.util.ArrayList;
 
-import Main.Chapeaux;
-import Main.Quadrilateres;
-import Main.Triangles;
+import Main.*;
 import ardoise.*; 
 
 public class TestArdoise {
@@ -91,14 +89,6 @@ public class TestArdoise {
 		
 		
 		ardoise.ajouterForme(tour);
-<<<<<<< HEAD
-		ardoise.ajouterForme(corpsMaison); 
-		ardoise.ajouterForme(porteMaison);
-		ardoise.ajouterForme(montagne1);
-		ardoise.ajouterForme(montagne2);
-
-
-=======
 		ardoise.ajouterForme(corpsMaison);
 		ardoise.ajouterForme(porteMaison); 
 		ardoise.ajouterForme(porteMaison);
@@ -113,7 +103,7 @@ public class TestArdoise {
 		ardoise.ajouterForme(branche3);
 		ardoise.ajouterForme(branche4);
 		
->>>>>>> 740f107a6bbf855e861f12f857c16204fcbf4b2d
+
 		ardoise.test();
 		
 	}

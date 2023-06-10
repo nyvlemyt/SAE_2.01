@@ -2,9 +2,7 @@ package Main;
 
 import java.util.ArrayList;
 
-import ardoise.Forme;
-import ardoise.PointPlan;
-import ardoise.Segment;
+import ardoise.*;
 
 public class Chapeaux extends Forme {
 

@@ -2,9 +2,7 @@ package Main;
 
 import java.util.ArrayList;
 
-import ardoise.Forme;
-import ardoise.PointPlan;
-import ardoise.Segment;
+import ardoise.*;
 
 public class Triangles extends Forme {
 	
@@ -50,12 +48,8 @@ public class Triangles extends Forme {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public String typeForme() 
 	{
-=======
-	public String typeForme() {
->>>>>>> 740f107a6bbf855e861f12f857c16204fcbf4b2d
 		return "T";
 	}
 
