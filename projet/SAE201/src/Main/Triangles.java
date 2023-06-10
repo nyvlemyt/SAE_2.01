@@ -14,26 +14,26 @@ public class Triangles extends Forme {
 	public Triangles() {
 		
 		super();
-		this.point1 = new PointPlan(0,0) ;
-		this.point2 = new PointPlan(0,0) ;
-		this.point3 = new PointPlan(0,0) ;
+		this.setPoint1(new PointPlan(0,0)) ;
+		this.setPoint2(new PointPlan(0,0)) ;
+		this.setPoint3(new PointPlan(0,0)) ;
 	}
 	
 	public Triangles(String nom, PointPlan p1, PointPlan p2, PointPlan p3) {
 		
 		super(nom) ;
-		this.point1 = p1 ;
-		this.point2 = p2 ;
-		this.point3 = p3 ;
+		this.setPoint1(p1) ;
+		this.setPoint2(p2) ;
+		this.setPoint3(p3) ;
 	}
 	
 	// Constructeur par copie : 
 		public Triangles(Triangles nouvTriangles)
 		{
 			super(nouvTriangles.getNomForme());
-			this.point1 = nouvTriangles.getPoint1();
-			this.point2 = nouvTriangles.getPoint2();
-			this.point3 = nouvTriangles.getPoint3();
+			this.setPoint1(nouvTriangles.getPoint1());
+			this.setPoint2(nouvTriangles.getPoint2());
+			this.setPoint3(nouvTriangles.getPoint3());
 			
 		}
 	
