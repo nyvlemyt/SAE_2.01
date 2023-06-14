@@ -31,8 +31,8 @@ public class TestEtoile {
 		PointPlan p36 = new PointPlan(170,52);
 		Forme branche4 = new Chapeaux("branche 4", p34, p35, p36) ;
 		
-		PointPlan p3 = new PointPlan(8,12);
-		PointPlan p4 = new PointPlan(7,10);
+		PointPlan p3 = new PointPlan(55,45);
+		PointPlan p4 = new PointPlan(30,40);
 		
 		 //Test 
 		
@@ -48,21 +48,20 @@ public class TestEtoile {
 
 		System.out.println(deQuad); 
 		
-	/*	ardoise.ajouterForme(vide);
+		ardoise.ajouterForme(vide);
 		ardoise.ajouterForme(aaa);
 		ardoise.ajouterForme(copie1);
-		ardoise.ajouterForme(copie2);
-		ardoise.ajouterForme(quad);
+		ardoise.ajouterForme(copie2);	
 		ardoise.ajouterForme(deQuad);
 		
 		ardoise.dessinerGraphique();
 		
 		attendreUneSeconde(); 
-	*/	
+	
+		
 		deQuad.deplacer(10, 10);
 		System.out.println(deQuad);
 		ardoise.dessinerGraphique();
-		
 	}
 	
 	public static void attendreUneSeconde() {

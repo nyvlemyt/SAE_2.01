@@ -65,10 +65,14 @@ public class Etoile extends FormesComposees{
 		{
             // Code à exécuter si o est un objet de type Quadrilateres
 			Quadrilateres q = (Quadrilateres) o; 
-			this.setBranche1(new Chapeaux("banche 1",q.getBasGauche(),q.getBasDroit(),1));
-			this.setBranche2(new Chapeaux("banche 2",q.getBasGauche(),q.getHautGauche(),0));
-			this.setBranche3(new Chapeaux("banche 3",q.getHautGauche(),q.getHautDroit(),0));
-			this.setBranche4(new Chapeaux("banche 4",q.getBasDroit(),q.getHautDroit(),1));
+			PointPlan basG = new PointPlan(q.getBasGauche().getAbscisse(), q.getBasGauche().getOrdonnee()); 
+			PointPlan basD = new PointPlan(q.getBasDroit().getAbscisse(), q.getBasDroit().getOrdonnee());
+			PointPlan hautG = new PointPlan(q.getHautGauche().getAbscisse(), q.getHautGauche().getOrdonnee());
+			PointPlan hautD = new PointPlan(q.getHautDroit().getAbscisse(), q.getHautDroit().getOrdonnee());
+			this.setBranche1(new Chapeaux("banche 1",q.getBasDroit(),q.getBasGauche(),1));
+			this.setBranche2(new Chapeaux("banche 2",basG ,hautG,0));
+			this.setBranche3(new Chapeaux("banche 3",q.getHautDroit(),q.getHautGauche(),0));
+			this.setBranche4(new Chapeaux("banche 4",basD,hautD,1));
         } 
 	}
 	
