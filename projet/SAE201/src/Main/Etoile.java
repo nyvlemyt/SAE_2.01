@@ -36,45 +36,41 @@ public class Etoile extends FormesComposees{
 
 
 //Construteurs par copie : 
-	public Etoile(Etoile e)
-	{
-		super(e.getNomForme()); 
-		this.setBranche1(new Chapeaux(e.getBranche1()));
-		this.setBranche2(new Chapeaux(e.getBranche2()));
-		this.setBranche3(new Chapeaux(e.getBranche3()));
-		this.setBranche4(new Chapeaux(e.getBranche4()));
-	}
-	
 	public Etoile(Object o)
 	{
 		super();
 		Etoile e = (Etoile) o ;
+		this.setNomForme(e.getNomForme());
 		this.setBranche1(new Chapeaux(e.getBranche1()));
 		this.setBranche2(new Chapeaux(e.getBranche2()));
 		this.setBranche3(new Chapeaux(e.getBranche3()));
 		this.setBranche4(new Chapeaux(e.getBranche4()));
 	}
 
-//Construteur par copie avec nouveau nom : 
+//Construteur avec nouveau nom : 
 	public Etoile(String nom, Object o)
 	{
 		super(nom); 
-		Etoile e = (Etoile) o; 
-		this.setBranche1(new Chapeaux(e.getBranche1()));
-		this.setBranche2(new Chapeaux(e.getBranche2()));
-		this.setBranche3(new Chapeaux(e.getBranche3()));
-		this.setBranche4(new Chapeaux(e.getBranche4()));
-	}
-
-//Constructeur avec un Quadrilatere : 
-	public Etoile(Object o, String nom)
-	{
-		super(nom);
-		Quadrilateres q = (Quadrilateres) o; 
-		this.setBranche1(new Chapeaux("banche 1",q.getBasGauche(),q.getBasDroit(),1));
-		this.setBranche2(new Chapeaux("banche 2",q.getBasGauche(),q.getHautGauche(),0));
-		this.setBranche3(new Chapeaux("banche 1",q.getHautGauche(),q.getHautDroit(),0));
-		this.setBranche4(new Chapeaux("banche 1",q.getBasDroit(),q.getHautDroit(),1));
+		
+		if (o instanceof Quadrilateres) 
+		{
+            // Code à exécuter si o est un objet de type Quadrilatere
+			Quadrilateres q = (Quadrilateres) o; 
+			this.setBranche1(new Chapeaux("banche 1",q.getBasGauche(),q.getBasDroit(),1));
+			this.setBranche2(new Chapeaux("banche 2",q.getBasGauche(),q.getHautGauche(),0));
+			this.setBranche3(new Chapeaux("banche 1",q.getHautGauche(),q.getHautDroit(),0));
+			this.setBranche4(new Chapeaux("banche 1",q.getBasDroit(),q.getHautDroit(),1));
+        } 
+		else if (o instanceof Etoile) 
+		{
+            // Code à exécuter si o est un objet de type Etoile
+        	Etoile e = (Etoile) o; 
+    		this.setBranche1(new Chapeaux(e.getBranche1()));
+    		this.setBranche2(new Chapeaux(e.getBranche2()));
+    		this.setBranche3(new Chapeaux(e.getBranche3()));
+    		this.setBranche4(new Chapeaux(e.getBranche4()));
+        }
+		
 	}
 	
 //getters : 
@@ -87,15 +83,29 @@ public class Etoile extends FormesComposees{
 	public Chapeaux getBranche4() {return branche4;}
 	
 //setters : 
-	public void setBranche1(Chapeaux nouvBranche1) {this.branche1 = nouvBranche1;}
+	public void setBranche1(Object o) 
+	{ 
+		Chapeaux nouvBranche = (Chapeaux) o; 
+		this.branche1 = nouvBranche;
+	}
 	
-	public void setBranche2(Chapeaux nouvBranche2) {this.branche2 = nouvBranche2;}
+	public void setBranche2(Object o) 
+	{
+		Chapeaux nouvBranche = (Chapeaux) o; 
+		this.branche2 = nouvBranche;
+	}
 
-	public void setBranche3(Chapeaux nouvBranche3) {this.branche3 = nouvBranche3;}
-
-	public void setBranche4(Chapeaux nouvBranche4) {this.branche4 = nouvBranche4;}
-
+	public void setBranche3(Object o) 
+	{
+		Chapeaux nouvBranche = (Chapeaux) o; 
+		this.branche2 = nouvBranche;
+	}
 	
+	public void setBranche4(Object o) 
+	{
+		Chapeaux nouvBranche = (Chapeaux) o; 
+		this.branche2 = nouvBranche;
+	}
 
 	@Override
 	public void deplacer(int arg0, int arg1) 
