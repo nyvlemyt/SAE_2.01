@@ -108,13 +108,13 @@ public class Etoile extends FormesComposees{
 	public void setBranche3(Object o) 
 	{
 		Chapeaux nouvBranche = (Chapeaux) o; 
-		this.branche2 = nouvBranche;
+		this.branche3 = nouvBranche;
 	}
 	
 	public void setBranche4(Object o) 
 	{
 		Chapeaux nouvBranche = (Chapeaux) o; 
-		this.branche2 = nouvBranche;
+		this.branche4 = nouvBranche;
 	}
 
 	
