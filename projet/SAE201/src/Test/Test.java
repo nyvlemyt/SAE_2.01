@@ -1,20 +1,32 @@
 package Test;
 import Main.*;
 
-import ardoise.*; 
-
-import ardoise.Ardoise;
-import ardoise.PointPlan;
+import ardoise.*;
 
 public class Test {
 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		Ardoise ardoise = new Ardoise();
 		
 		
+		/*
+		PointPlan p25 = new PointPlan(100,84);
+		PointPlan p27 = new PointPlan(100,52);
+		Chapeaux branche1 = new Chapeaux("branche 1", p25, p27, 1) ;
+		ardoise.ajouterForme(branche1);
+		*/
+		
+		PointPlan p3 = new PointPlan(8,12);
+		PointPlan p4 = new PointPlan(7,10);
+		Forme corpsMaison = new Quadrilateres("Corps Maison", p3, p4);
+		Etoile e = new Etoile(corpsMaison, "étoile 1"); 
+		
+//		Maison mais = new Maison("test", corpsMaison); 
+		ardoise.ajouterForme(e);
+
+		/*
 		FormesComposees fc = new Maison(); 
 		System.out.println(fc.typeForme());
 	
@@ -44,12 +56,10 @@ public class Test {
 		
 				FormesComposees etoile = new Etoile(null,branche1,branche2,branche3,branche4) ;
 				
-				
-				
 				ardoise.ajouterForme(etoile);
-				ardoise.test() ;
-
-
+				*/
+		
+		ardoise.test() ;
 	}
 
 }

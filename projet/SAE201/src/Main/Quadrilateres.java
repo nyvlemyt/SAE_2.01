@@ -9,9 +9,9 @@ public class Quadrilateres extends Forme {
 	private PointPlan hautGauche;
 	private PointPlan basGauche; 
 	private PointPlan hautDroit ; 
-	private PointPlan basDroit; 
+	private PointPlan basDroit;
 
-	// Constructeur par défaut : 
+//Constructeur par défaut : 
 	public Quadrilateres() 
 	{
 		super();
@@ -20,7 +20,8 @@ public class Quadrilateres extends Forme {
 		this.setHautDroit(new PointPlan(0,0));
 		this.setBasDroit(new PointPlan(0,0)) ;
 	}
-	// Constructeur qui initialise un nom et les points du quadrilatères : 
+	
+// Constructeur normal : 
 	public Quadrilateres(String nom, PointPlan p, PointPlan p0) 
 	{
 		super(nom);
@@ -30,8 +31,13 @@ public class Quadrilateres extends Forme {
 		this.setBasDroit(p0);
 	}
 	
+<<<<<<< HEAD
 	// Constructeur par copie : 
 	public Quadrilateres(Quadrilateres nouvQuadrilatères)
+=======
+//Constructeurs par copie : 
+	public Quadrilateres(Quadrilateres copie)
+>>>>>>> 8dd2a9cb5d839e4ccfb53a07be492ac8edef4c9c
 	{
 		super(nouvQuadrilatères.getNomForme());
 		this.setHautGauche(nouvQuadrilatères.getHautGauche());
@@ -39,47 +45,45 @@ public class Quadrilateres extends Forme {
 		this.setHautDroit(nouvQuadrilatères.getHautDroit());
 		this.setBasDroit(nouvQuadrilatères.getBasDroit());
 	}
-	//getters : 
-	public PointPlan getHautGauche() 
+	
+	public Quadrilateres(Object o)
 	{
-		return this.hautGauche;
+		super();
+		Quadrilateres copie = (Quadrilateres) o; 
+		this.setHautGauche(copie.getHautGauche());
+		this.setBasGauche(copie.getBasGauche());
+		this.setHautDroit(copie.getHautDroit());
+		this.setBasDroit(copie.getBasDroit());
 	}
 	
-	public PointPlan getBasGauche() 
+//Constructeur par copie avec nouveau nom : 
+	public Quadrilateres(String nom, Object o)
 	{
-		return this.basGauche;
+		super(nom);
+		Quadrilateres copie = (Quadrilateres) o; 
+		this.setHautGauche(copie.getHautGauche());
+		this.setBasGauche(copie.getBasGauche());
+		this.setHautDroit(copie.getHautDroit());
+		this.setBasDroit(copie.getBasDroit());
 	}
 	
-	public PointPlan getHautDroit() 
-	{
-		return this.hautDroit;
-	}
+//getters : 
+	public PointPlan getHautGauche() {return this.hautGauche;}
 	
-	public PointPlan getBasDroit() 
-	{
-		return this.basDroit;
-	}
+	public PointPlan getBasGauche() {return this.basGauche;}
 	
-	//setters : 
-	public void setHautGauche(PointPlan p1) 
-	{
-		this.hautGauche = p1;
-	}
+	public PointPlan getHautDroit() {return this.hautDroit;}
 	
-	public void setBasGauche(PointPlan p2) 
-	{
-		this.basGauche = p2;
-	}
+	public PointPlan getBasDroit() {return this.basDroit;}
 	
-	public void setHautDroit(PointPlan p3) 
-	{
-		this.hautDroit = p3;
-	}
+//setters : 
+	public void setHautGauche(PointPlan p1) {this.hautGauche = p1;}
 	
-	public void setBasDroit(PointPlan p4) 
-	{
-		this.basDroit = p4;
-	}
+	public void setBasGauche(PointPlan p2) {this.basGauche = p2;}
+	
+	public void setHautDroit(PointPlan p3) {this.hautDroit = p3;}
+	
+	public void setBasDroit(PointPlan p4) {this.basDroit = p4;}
 	
 	@Override
 	public void deplacer(int arg0, int arg1) 
@@ -106,5 +110,15 @@ public class Quadrilateres extends Forme {
 	{
 		return "Q";
 	}
-
+	
+//toString : 
+	public String toString()
+	{
+		return super.toString() +"/n" 
+				+ "Point Haut Gauche : " + this.getHautGauche() + "/n" 
+				+ "Point Bas Gauche : " + this.getBasGauche()	+ "/n" 
+				+ "Point Haut Droit : " + this.getHautDroit() + "/n" 
+				+ "Point Bas Droit : " + this.getBasDroit() ; 
+	}
+	
 }

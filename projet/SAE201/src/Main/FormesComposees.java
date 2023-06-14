@@ -4,10 +4,12 @@ import ardoise.Forme;
 
 public abstract class FormesComposees extends Forme{
 	
-	public FormesComposees() {
+	public FormesComposees()
+	{
 		super(); 
 	}
-	public FormesComposees(String nom) {
+	public FormesComposees(String nom) 
+	{
 		super(nom); 
 	}
 	
@@ -15,5 +17,10 @@ public abstract class FormesComposees extends Forme{
 	{
 		return "GF";
 	}
-
+	
+	public String toString()
+	{
+		return super.toString() + "/n" 
+				+ "Je suis une forme composée"; 
+	}
 }
