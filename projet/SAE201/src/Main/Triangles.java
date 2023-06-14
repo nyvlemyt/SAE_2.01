@@ -2,6 +2,8 @@ package Main;
 
 import java.util.ArrayList;
 
+import Exception.PointPlanException;
+import Exception.TrianglesException;
 import ardoise.*;
 
 public class Triangles extends Forme {
@@ -12,7 +14,7 @@ public class Triangles extends Forme {
 	private PointPlan point3 ;
 
 //Constructeur par défaut : 
-	public Triangles() 
+	public Triangles() throws PointPlanException 
 	{
 		super();
 		this.setPoint1(new PointPlan(0,0)) ;
@@ -21,7 +23,7 @@ public class Triangles extends Forme {
 	}
 	
 //Constructeur normal : 
-	public Triangles(String nom, PointPlan p1, PointPlan p2, PointPlan p3) 
+	public Triangles(String nom, PointPlan p1, PointPlan p2, PointPlan p3) throws PointPlanException 
 	{	
 		super(nom) ;
 		this.setPoint1(p1) ;
@@ -30,24 +32,34 @@ public class Triangles extends Forme {
 	}
 	
 //Constructeurs par copie : 
-	public Triangles(Object o)
+	public Triangles(Object o) throws TrianglesException, PointPlanException 
 	{
 		super();
+		try {
 		Triangles nouvTriangles = (Triangles) o; 
 		this.setNomForme(nouvTriangles.getNomForme());
 		this.setPoint1(nouvTriangles.getPoint1());
 		this.setPoint2(nouvTriangles.getPoint2());
 		this.setPoint3(nouvTriangles.getPoint3());	
+		}
+		catch (ClassCastException e) {
+			throw new TrianglesException("L'objet passé en paramètre n'est pas de type Triangles.");
+	}
 	}
 		
 //Constructeur par copie avec nouveau nom : 
-	public Triangles(String nom, Object o)
+	public Triangles(String nom, Object o) throws TrianglesException, PointPlanException
 	{
 		super(nom);
+		try {
 		Triangles nouvTriangles = (Triangles) o; 
 		this.setPoint1(nouvTriangles.getPoint1());
 		this.setPoint2(nouvTriangles.getPoint2());
 		this.setPoint3(nouvTriangles.getPoint3());	
+		}
+		catch (ClassCastException e) {
+			throw new TrianglesException("L'objet passé en paramètre n'est pas de type Triangles.");
+		}
 	}
 	
 //getters : 
@@ -58,11 +70,38 @@ public class Triangles extends Forme {
 	public PointPlan getPoint3() {return this.point3;}
 		
 //setters : 
-	public void setPoint1(PointPlan nouvPoint1) {this.point1 = nouvPoint1;}
+	public void setPoint1(PointPlan p1) throws PointPlanException
+	{
+		try {
+		this.point1 = p1;
+		} 
+		catch (ClassCastException e)
+		{
+		throw new PointPlanException("L'object passé en paramètre n'est pas de type PointPlan."); 
+		}
+	}
 		
-	public void setPoint2(PointPlan nouvPoint2) {this.point2 = nouvPoint2;}
+	public void setPoint2(PointPlan p2) throws PointPlanException
+	{
+		try {
+		this.point2 = p2;
+		} 
+		catch (ClassCastException e)
+		{
+		throw new PointPlanException("L'object passé en paramètre n'est pas de type PointPlan."); 
+		}
+	}
 		
-	public void setPoint3(PointPlan nouvPoint3) {this.point3 = nouvPoint3;}
+	public void setPoint3(PointPlan p3) throws PointPlanException
+	{
+		try {
+		this.point3 = p3;
+		} 
+		catch (ClassCastException e)
+		{
+		throw new PointPlanException("L'object passé en paramètre n'est pas de type PointPlan."); 
+		}
+	}
 		
 
 	@Override

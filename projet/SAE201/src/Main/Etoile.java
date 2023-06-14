@@ -2,6 +2,8 @@ package Main;
 
 import java.util.ArrayList;
 
+import Exception.ChapeauxException;
+import Exception.PointPlanException;
 import ardoise.*;
 
 public class Etoile extends FormesComposees{
@@ -12,7 +14,7 @@ public class Etoile extends FormesComposees{
 	private Chapeaux branche4 ;
 	
 //Constructeur par défaut : 
-	public Etoile() 
+	public Etoile() throws PointPlanException 
 	{
 			super();
 			this.setBranche1(new Chapeaux()) ;
@@ -36,7 +38,7 @@ public class Etoile extends FormesComposees{
 
 
 //Construteurs par copie : 
-	public Etoile(Object o)
+	public Etoile(Object o) throws ChapeauxException, PointPlanException
 	{
 		super();
 		Etoile e = (Etoile) o ;
@@ -48,7 +50,7 @@ public class Etoile extends FormesComposees{
 	}
 
 //Construteur avec nouveau nom : 
-	public Etoile(String nom, Object o)
+	public Etoile(String nom, Object o) throws Exception
 	{
 		super(nom); 
 		
@@ -61,7 +63,7 @@ public class Etoile extends FormesComposees{
     		this.setBranche3(new Chapeaux(e.getBranche3()));
     		this.setBranche4(new Chapeaux(e.getBranche4()));
         }
-		if (o instanceof Quadrilateres) 
+		else if (o instanceof Quadrilateres) 
 		{
             // Code à exécuter si o est un objet de type Quadrilateres
 			Quadrilateres q = (Quadrilateres) o; 
@@ -69,11 +71,17 @@ public class Etoile extends FormesComposees{
 			PointPlan basD = new PointPlan(q.getBasDroit().getAbscisse(), q.getBasDroit().getOrdonnee());
 			PointPlan hautG = new PointPlan(q.getHautGauche().getAbscisse(), q.getHautGauche().getOrdonnee());
 			PointPlan hautD = new PointPlan(q.getHautDroit().getAbscisse(), q.getHautDroit().getOrdonnee());
+		
 			this.setBranche1(new Chapeaux("banche 1",q.getBasDroit(),q.getBasGauche(),1));
 			this.setBranche2(new Chapeaux("banche 2",basG ,hautG,0));
 			this.setBranche3(new Chapeaux("banche 3",q.getHautDroit(),q.getHautGauche(),0));
 			this.setBranche4(new Chapeaux("banche 4",basD,hautD,1));
+
         } 
+		else
+		{
+			throw new Exception("L'objet passé en paramètre n'est ni de type Etoile, ni de type Quadrilateres.");
+		}
 	}
 	
 //getters : 

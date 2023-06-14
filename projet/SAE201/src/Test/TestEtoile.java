@@ -1,4 +1,5 @@
 package Test;
+import Exception.ChapeauxException;
 import Main.*;
 import ardoise.*;
 
@@ -40,11 +41,44 @@ public class TestEtoile {
 		
 		Etoile vide = new Etoile(); 
 		Etoile aaa = new Etoile("normal", branche1 ,branche2 ,branche3 ,branche4); 
-		Forme copie1 = new Etoile(aaa); 
-		Forme copie2 = new Etoile ("copie2", copie1); 
+		Forme copie1 = null;
+		try {
+			copie1 = new Etoile(aaa);
+		} catch (ChapeauxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		try {
+			Forme copie2 = new Etoile ("copie2", copie1);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace(); 
+		} 
+		
+		PointPlan p10 = new PointPlan(118,13);
+		PointPlan p20 = new PointPlan(123,20);
+		try {
+			Forme copie2 = new Etoile ("copie2", p20);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			Forme copie3 = new Etoile ("copie3", branche1 ,branche2 ,branche3 ,new Chapeaux("oiseau2", p10, p20,1));
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			System.out.println(e1);
+		}
 		
 		Forme quad = new Quadrilateres("quad", p3, p4);
-		Etoile deQuad = new Etoile("a partir de quad", quad); 
+		Etoile deQuad = null; 
+		try 
+		{
+			deQuad = new Etoile("a partir de quad", quad);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 
 		System.out.println(deQuad); 
 		

@@ -1,5 +1,7 @@
 package Test;
 
+import Exception.ChapeauxException;
+import Exception.QuadrilateresException;
 import Main.*;
 import ardoise.*;
 
@@ -29,12 +31,44 @@ public class TestMaison {
 
 		Ardoise ardoise = new Ardoise();
 		
-		Maison vide = new Maison();
-		Forme normal = new Maison("hh", porte, corps, toit);
-		Forme copie1 = new Maison(normal); 
-		Forme copie2 = new Maison("copie3",copie1);
-		Forme copie4 = new Maison("copie4",corps);
-		Forme mais = new Maison("h", corps2);
+		try {
+			Maison vide = new Maison();
+		} catch (QuadrilateresException | ChapeauxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Forme normal = null;
+		try {
+			normal = new Maison("hh", porte, corps, toit);
+		} catch (QuadrilateresException | ChapeauxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Forme copie1 = null;
+		try {
+			copie1 = new Maison(normal);
+		} catch (QuadrilateresException | ChapeauxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		try {
+			Forme copie2 = new Maison("copie3",copie1);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			Forme copie4 = new Maison("copie4",corps);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			Forme mais = new Maison("h", corps2);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		System.out.println(normal);
 		

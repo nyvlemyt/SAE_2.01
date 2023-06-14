@@ -1,5 +1,6 @@
 package Test;
 
+import Exception.QuadrilateresException;
 import Main.*;
 import ardoise.*;
 
@@ -16,9 +17,33 @@ public class TestQuadrilateres {
 				
 		Forme vide = new Quadrilateres(); 
 		Forme quadra = new Quadrilateres("quadra1", p1, p2);
-		Forme copie1 = new Quadrilateres(quadra); 
-		Forme copie2 = new Quadrilateres("copie2", copie1); 
+		Forme copie1 = null;
+		try {
+			copie1 = new Quadrilateres(quadra);
+		} catch (QuadrilateresException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		try {
+			copie1 = new Quadrilateres(p2);
+		} catch (QuadrilateresException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Forme copie2 = null;
+		try {
+			copie2 = new Quadrilateres("copie2", copie1);
+		} catch (QuadrilateresException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 
+		try {
+			copie2 = new Quadrilateres("copie2", p2);
+		} catch (QuadrilateresException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(quadra); 
 				
 		ardoise.ajouterForme(quadra);

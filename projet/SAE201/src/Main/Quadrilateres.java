@@ -2,6 +2,8 @@ package Main;
 
 import java.util.ArrayList;
 
+import Exception.PointPlanException;
+import Exception.QuadrilateresException;
 import ardoise.*;
 
 public class Quadrilateres extends Forme {
@@ -12,7 +14,7 @@ public class Quadrilateres extends Forme {
 	private PointPlan basDroit;
 
 //Constructeur par défaut : 
-	public Quadrilateres() 
+	public Quadrilateres() throws PointPlanException 
 	{
 		super();
 		this.setHautGauche(new PointPlan(0,0));
@@ -22,7 +24,7 @@ public class Quadrilateres extends Forme {
 	}
 	
 // Constructeur normal : 
-	public Quadrilateres(String nom, PointPlan p, PointPlan p0) 
+	public Quadrilateres(String nom, PointPlan p, PointPlan p0) throws PointPlanException 
 	{
 		super(nom);
 		this.setHautGauche(p);
@@ -32,27 +34,37 @@ public class Quadrilateres extends Forme {
 	}
 	
 //Constructeurs par copie : 
-	public Quadrilateres(Object o) 
+	public Quadrilateres(Object o) throws QuadrilateresException, PointPlanException 
 	{
 		super();
+		try {
 		Quadrilateres nouvQuadrilatères = (Quadrilateres) o ; 
 		this.setNomForme(nouvQuadrilatères.getNomForme());
 		this.setHautGauche(nouvQuadrilatères.getHautGauche());
 		this.setBasGauche(nouvQuadrilatères.getBasGauche());
 		this.setHautDroit(nouvQuadrilatères.getHautDroit());
 		this.setBasDroit(nouvQuadrilatères.getBasDroit());
+		 } 
+		catch (ClassCastException e) {
+		        throw new QuadrilateresException("L'objet passé en paramètre n'est pas de type Quadrilateres.");
+		    }
 	}
 	
 	
 //Constructeur par copie avec nouveau nom : 
-	public Quadrilateres(String nom, Object o)
+	public Quadrilateres(String nom, Object o) throws QuadrilateresException, PointPlanException
 	{
 		super(nom);
+		try {
 		Quadrilateres copie = (Quadrilateres) o; 
 		this.setHautGauche(copie.getHautGauche());
 		this.setBasGauche(copie.getBasGauche());
 		this.setHautDroit(copie.getHautDroit());
 		this.setBasDroit(copie.getBasDroit());
+		 } 
+		catch (ClassCastException e) {
+		        throw new QuadrilateresException("L'objet passé en paramètre n'est pas de type Quadrilateres.");
+		    }
 	}
 	
 //getters : 
@@ -65,13 +77,54 @@ public class Quadrilateres extends Forme {
 	public PointPlan getBasDroit() {return this.basDroit;}
 	
 //setters : 
-	public void setHautGauche(PointPlan p1) {this.hautGauche = p1;}
+	public void setHautGauche(PointPlan p1) throws PointPlanException
+	{
+		try 
+		{
+			this.hautGauche = p1;
+		} 
+		catch (ClassCastException e)
+		{
+			throw new PointPlanException("L'objects passé en paramètre n'est pas de type PointPlan."); 
+		}
+	}
+		
 	
-	public void setBasGauche(PointPlan p2) {this.basGauche = p2;}
+	public void setBasGauche(PointPlan p2) throws PointPlanException
+	{
+		try 
+		{
+			this.basGauche = p2;
+		} 
+		catch (ClassCastException e)
+		{
+			throw new PointPlanException("L'object passé en paramètre n'est pas de type PointPlan."); 
+		}
+	}
 	
-	public void setHautDroit(PointPlan p3) {this.hautDroit = p3;}
+	public void setHautDroit(PointPlan p3) throws PointPlanException
+	{
+		try 
+		{
+			this.hautDroit = p3;
+		} 
+		catch (ClassCastException e)
+		{
+			throw new PointPlanException("L'object passé en paramètre n'est pas de type PointPlan."); 
+		}
+	}
 	
-	public void setBasDroit(PointPlan p4) {this.basDroit = p4;}
+	public void setBasDroit(PointPlan p4) throws PointPlanException
+	{
+		try 
+		{
+			this.basDroit = p4;
+		}
+		catch (ClassCastException e)
+		{
+		throw new PointPlanException("L'object passé en paramètre n'est pas de type PointPlan."); 
+		}
+	}
 	
 	@Override
 	public void deplacer(int arg0, int arg1) 

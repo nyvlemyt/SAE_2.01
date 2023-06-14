@@ -5,15 +5,26 @@ import ardoise.*;
 public class TestChapeux {
 
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws Exception 
 	{
-		Ardoise ardoise = new Ardoise(); 
-		
 		PointPlan p1 = new PointPlan(118,13);
 		PointPlan p2 = new PointPlan(123,20);
 		PointPlan p3 = new PointPlan(128,13);
-		PointPlan p4 = new PointPlan(123,10); 
+		PointPlan p4 = new PointPlan(123,10);
 		
+		try 
+		{
+			Forme excep = new Chapeaux("oiseau2", p1, p2,1);
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+		
+		Ardoise ardoise = new Ardoise(); 
+		
+		 
+		try {
 		Forme vide = new Chapeaux(); 
 		Forme normal = new Chapeaux("oiseau", p1,p2,p3);
 		
@@ -26,6 +37,7 @@ public class TestChapeux {
 		Forme copie1 = new Chapeaux(normal); 
 		Forme copie2 = new Chapeaux("copie3",copie1); 
 
+		
 		System.out.println(copie1); 
 		
 		ardoise.ajouterForme(normal);
@@ -39,6 +51,11 @@ public class TestChapeux {
 		sens.deplacer(-10, -10);
 		ardoise.dessinerGraphique();
 
+		}
+		catch (Exception e)
+		{
+			System.out.println(e); 
+		}
 	}
 	public static void attendreSecondes(int x) 
 	{

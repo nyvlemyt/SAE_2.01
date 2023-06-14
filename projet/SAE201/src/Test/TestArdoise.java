@@ -1,12 +1,15 @@
 package Test;
 
 
+import Exception.ChapeauxException;
+import Exception.PointPlanException;
+import Exception.QuadrilateresException;
 import Main.*;
 import ardoise.*; 
 
 public class TestArdoise {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws QuadrilateresException, ChapeauxException, PointPlanException 
 	{
 		
 		Ardoise ardoise = new Ardoise();
@@ -33,6 +36,7 @@ public class TestArdoise {
 		Forme toitMaison = new Chapeaux("Toit maison", p13, p14, p15) ;
 		
 		FormesComposees maison = new Maison("Maison", porteMaison, corpsMaison, toitMaison);
+		
 		
 		//Montagne 1
 		PointPlan p7 = new PointPlan(3,14);

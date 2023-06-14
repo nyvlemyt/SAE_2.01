@@ -1,5 +1,6 @@
 package Test;
 
+import Exception.TrianglesException;
 import Main.*;
 import ardoise.*;
 
@@ -14,8 +15,19 @@ Ardoise ardoise = new Ardoise();
 		
 		Forme vide = new Triangles(); 
 		Forme normal = new Triangles("montagne1", p1,p2,p3);
-		Forme copie1 = new Triangles(normal);  
-		Forme copie3 = new Triangles("copie3",copie1); 
+		Forme copie1 = null;
+		try {
+			copie1 = new Triangles(normal);
+		} catch (TrianglesException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+		try {
+			Forme copie3 = new Triangles("copie3",copie1);
+		} catch (TrianglesException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 
 		
 		System.out.println(normal);

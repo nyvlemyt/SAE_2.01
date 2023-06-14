@@ -2,6 +2,9 @@ package Main;
 
 import java.util.ArrayList;
 
+import Exception.ChapeauxException;
+import Exception.PointPlanException;
+import Exception.QuadrilateresException;
 import ardoise.*;
 
 public class Maison extends FormesComposees{
@@ -11,7 +14,7 @@ public class Maison extends FormesComposees{
 	private Chapeaux toit; 
 
 //Constructeur par défaut 
-	public Maison() 
+	public Maison() throws QuadrilateresException, ChapeauxException, PointPlanException 
 	{
 		super();
 		this.setPorte(new Quadrilateres());
@@ -20,7 +23,7 @@ public class Maison extends FormesComposees{
 	}
 
 //Constructeur normal : 
-	public Maison(String nom, Object o1, Object o2 , Object o3)
+	public Maison(String nom, Object o1, Object o2 , Object o3) throws QuadrilateresException, ChapeauxException
 	{
 		super(nom);
 		Quadrilateres unePorte = (Quadrilateres) o1; 
@@ -32,7 +35,7 @@ public class Maison extends FormesComposees{
 	}
 
 // Constructeurs par copie : 
-	public Maison(Object o)
+	public Maison(Object o) throws QuadrilateresException, ChapeauxException, PointPlanException
 	{
 		super();
 		Maison m = (Maison) o;
@@ -43,7 +46,7 @@ public class Maison extends FormesComposees{
 	}
 
 // Constructeur avec nouveau nom : 
-	public Maison(String nom, Object o)
+	public Maison(String nom, Object o) throws Exception
 	{
 		super(nom);
 		if (o instanceof Maison) 
@@ -55,13 +58,17 @@ public class Maison extends FormesComposees{
 			this.setToit(new Chapeaux(m.getToit()));
 		}
 		
-		if (o instanceof Quadrilateres) 
+		else if (o instanceof Quadrilateres) 
 		{
 			 // Code à exécuter si o est un objet de type Quadrilateres
 			Quadrilateres cont = (Quadrilateres) o;
 			this.setContour(cont); 
 			this.setToit(new Chapeaux("toit",cont.getBasGauche(), cont.getBasDroit(), 1));
 			this.setPorte(new Quadrilateres(creerPorte(cont)));
+		}
+		else
+		{
+			throw new Exception("L'objet passé en paramètre n'est ni de type Maison, ni de type Quadrilateres.");
 		}
 	}
 
@@ -73,28 +80,44 @@ public class Maison extends FormesComposees{
 	public Chapeaux getToit() {return toit;}
 
 //setters : 
-	public void setPorte(Object o) 
+	public void setPorte(Object o) throws QuadrilateresException 
 	{
+		try {
 		Quadrilateres unePorte = (Quadrilateres) o; 
 		this.porte = unePorte;
+		}
+		catch (ClassCastException e) {
+	        throw new QuadrilateresException("L'objet passé en paramètre n'est pas de type Quadrilateres.");
+	    }
 	}
 		
-	public void setContour(Object o)
+	public void setContour(Object o) throws QuadrilateresException
 	{
+		try {
 		Quadrilateres unContour = (Quadrilateres) o; 
 		this.contour = unContour;
+		}
+		catch (ClassCastException e) {
+        throw new QuadrilateresException("L'objet passé en paramètre n'est pas de type Quadrilateres.");
+    }
 	}
 		
-	public void setToit(Object o) 
+	public void setToit(Object o) throws ChapeauxException
 	{
+		try {
 		Chapeaux unToit = (Chapeaux) o; 
 		this.toit = unToit;
+		}
+		catch (ClassCastException e) {
+			throw new ChapeauxException("L'objet passé en paramètre n'est pas de type Triangles."); 
+		}
 	}
 	
 
 //méthode pour creer une porte au centre du corp de la maison
-	public Quadrilateres creerPorte(Object o)
+	public Quadrilateres creerPorte(Object o) throws QuadrilateresException, PointPlanException
 	{  
+		try {
 		Quadrilateres q = (Quadrilateres) o;
 		int xA = q.getHautGauche().getAbscisse();
 		int xB = q.getHautDroit().getAbscisse(); 
@@ -111,7 +134,7 @@ public class Maison extends FormesComposees{
 			porte.setHautGauche(new PointPlan(z-10, q.getHautGauche().getOrdonnee()));
 			porte.setHautDroit(new PointPlan(z+10, q.getHautGauche().getOrdonnee()));
 		}
-		else 
+		else
 		{
 			porte.setHautGauche(new PointPlan(z-1, q.getHautGauche().getOrdonnee()));
 			porte.setHautDroit(new PointPlan(z+1, q.getHautGauche().getOrdonnee()));
@@ -120,6 +143,10 @@ public class Maison extends FormesComposees{
 		porte.setBasDroit(new PointPlan(porte.getHautDroit().getAbscisse(), w));
 			
 		return porte ; 
+		}
+		catch (ClassCastException e) {
+	        throw new QuadrilateresException("L'objet passé en paramètre n'est pas de type Quadrilateres.");
+	    }
 	}
 	
 	@Override
