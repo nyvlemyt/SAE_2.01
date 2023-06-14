@@ -14,7 +14,7 @@ public class Etoile extends FormesComposees{
 	private Chapeaux branche4 ;
 	
 //Constructeur par défaut : 
-	public Etoile() throws PointPlanException 
+	public Etoile() throws PointPlanException, ChapeauxException 
 	{
 			super();
 			this.setBranche1(new Chapeaux()) ;
@@ -23,7 +23,7 @@ public class Etoile extends FormesComposees{
 			this.setBranche4(new Chapeaux()) ;
 	}
 //Constructeur normal : 	
-	public Etoile(String nom, Object o1, Object o2 , Object o3 , Object o4)
+	public Etoile(String nom, Object o1, Object o2 , Object o3 , Object o4) throws ChapeauxException
 	{
 			super(nom) ;
 			Chapeaux b1 = (Chapeaux) o1; 
@@ -94,28 +94,52 @@ public class Etoile extends FormesComposees{
 	public Chapeaux getBranche4() {return branche4;}
 	
 //setters : 
-	public void setBranche1(Object o) 
+	public void setBranche1(Object o) throws ChapeauxException
 	{ 
+		try {
 		Chapeaux nouvBranche = (Chapeaux) o; 
 		this.branche1 = nouvBranche;
+		}
+		catch (ClassCastException e)
+		{
+			throw new ChapeauxException("L'objet passé en paramètre n'est pas de type Chapeaux.");
+		}
 	}
 	
-	public void setBranche2(Object o) 
+	public void setBranche2(Object o) throws ChapeauxException 
 	{
+		try {
 		Chapeaux nouvBranche = (Chapeaux) o; 
 		this.branche2 = nouvBranche;
 	}
-
-	public void setBranche3(Object o) 
+	catch (ClassCastException e)
 	{
+		throw new ChapeauxException("L'objet passé en paramètre n'est pas de type Chapeaux.");
+	}
+	}
+
+	public void setBranche3(Object o) throws ChapeauxException 
+	{
+		try {
 		Chapeaux nouvBranche = (Chapeaux) o; 
 		this.branche3 = nouvBranche;
-	}
+		}
+		catch (ClassCastException e)
+		{
+			throw new ChapeauxException("L'objet passé en paramètre n'est pas de type Chapeaux.");
+		}
+		}
 	
-	public void setBranche4(Object o) 
+	public void setBranche4(Object o) throws ChapeauxException 
 	{
+		try {
 		Chapeaux nouvBranche = (Chapeaux) o; 
 		this.branche4 = nouvBranche;
+	}
+	catch (ClassCastException e)
+	{
+		throw new ChapeauxException("L'objet passé en paramètre n'est pas de type Chapeaux.");
+	}
 	}
 
 	

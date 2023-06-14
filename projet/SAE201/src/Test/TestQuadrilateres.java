@@ -1,5 +1,6 @@
 package Test;
 
+import Exception.PointPlanException;
 import Exception.QuadrilateresException;
 import Main.*;
 import ardoise.*;
@@ -15,32 +16,43 @@ public class TestQuadrilateres {
 		
 		Ardoise ardoise = new Ardoise();
 				
-		Forme vide = new Quadrilateres(); 
-		Forme quadra = new Quadrilateres("quadra1", p1, p2);
-		Forme copie1 = null;
 		try {
-			copie1 = new Quadrilateres(quadra);
-		} catch (QuadrilateresException e) {
+			Forme vide = new Quadrilateres();
+		} catch (PointPlanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
+		Forme quadra = null;
+		try {
+			quadra = new Quadrilateres("quadra1", p1, p2);
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Forme copie1 = null;
+		try {
+			copie1 = new Quadrilateres(quadra);
+		} catch (QuadrilateresException | PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace(); 
+		}
 		try {
 			copie1 = new Quadrilateres(p2);
-		} catch (QuadrilateresException e) {
+		} catch (QuadrilateresException | PointPlanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Forme copie2 = null;
 		try {
 			copie2 = new Quadrilateres("copie2", copie1);
-		} catch (QuadrilateresException e) {
+		} catch (QuadrilateresException | PointPlanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 
 		try {
 			copie2 = new Quadrilateres("copie2", p2);
-		} catch (QuadrilateresException e) {
+		} catch (QuadrilateresException | PointPlanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -61,7 +73,7 @@ public class TestQuadrilateres {
 	{
         try 
         {
-            Thread.sleep(x); // Attendre 1 seconde (1000 millisecondes)
+            Thread.sleep(x); 
         } 
         catch (InterruptedException e) 
         {

@@ -5,7 +5,7 @@ import ardoise.*;
 public class TestChapeux {
 
 
-	public static void main(String[] args) throws Exception 
+	public static void main(String[] args) 
 	{
 		PointPlan p1 = new PointPlan(118,13);
 		PointPlan p2 = new PointPlan(123,20);
@@ -61,7 +61,7 @@ public class TestChapeux {
 	{
         try 
         {
-            Thread.sleep(x); // Attendre 1 seconde (1000 millisecondes)
+            Thread.sleep(x); 
         } 
         catch (InterruptedException e) 
         {

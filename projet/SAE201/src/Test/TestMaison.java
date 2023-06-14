@@ -1,6 +1,7 @@
 package Test;
 
 import Exception.ChapeauxException;
+import Exception.PointPlanException;
 import Exception.QuadrilateresException;
 import Main.*;
 import ardoise.*;
@@ -12,22 +13,46 @@ public class TestMaison {
 		//Corps Maison
 		PointPlan p4 = new PointPlan(180,198);
 		PointPlan p3 = new PointPlan(80,140);
-		Forme corps = new Quadrilateres("Corps Maison", p3, p4);
+		Forme corps = null;
+		try {
+			corps = new Quadrilateres("Corps Maison", p3, p4);
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
 		//Porte Maison 	
 		PointPlan p5 = new PointPlan(120,170);
 		PointPlan p6 = new PointPlan(140,198);
-		Forme porte = new Quadrilateres("Porte Maison", p5, p6);
+		Forme porte = null;
+		try {
+			porte = new Quadrilateres("Porte Maison", p5, p6);
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
 		//Toit maison
 		PointPlan p13 = new PointPlan(80,140);
 		PointPlan p14 = new PointPlan(130,100);
 		PointPlan p15 = new PointPlan(180,140);
-		Forme toit = new Chapeaux("Toit maison", p13, p14, p15) ;
+		Forme toit = null;
+		try {
+			toit = new Chapeaux("Toit maison", p13, p14, p15);
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		PointPlan p30 = new PointPlan(80,108);
 		PointPlan p40 = new PointPlan(105,140);
-		Forme corps2 = new Quadrilateres("Corps Maison", p30, p40);
+		Forme corps2 = null;
+		try {
+			corps2 = new Quadrilateres("Corps Maison", p30, p40);
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		Ardoise ardoise = new Ardoise();
 		
@@ -36,10 +61,13 @@ public class TestMaison {
 		} catch (QuadrilateresException | ChapeauxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		Forme normal = null;
 		try {
-			normal = new Maison("hh", porte, corps, toit);
+			normal = new Maison("normal", porte, corps, toit);
 		} catch (QuadrilateresException | ChapeauxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,6 +76,9 @@ public class TestMaison {
 		try {
 			copie1 = new Maison(normal);
 		} catch (QuadrilateresException | ChapeauxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (PointPlanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
@@ -82,7 +113,7 @@ public class TestMaison {
 	
 	public static void attendreSecondes(int x) {
         try {
-            Thread.sleep(x); // Attendre 1 seconde (1000 millisecondes)
+            Thread.sleep(x); 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

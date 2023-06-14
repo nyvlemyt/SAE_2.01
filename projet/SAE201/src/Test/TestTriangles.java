@@ -1,5 +1,6 @@
 package Test;
 
+import Exception.PointPlanException;
 import Exception.TrianglesException;
 import Main.*;
 import ardoise.*;
@@ -13,18 +14,29 @@ Ardoise ardoise = new Ardoise();
 		PointPlan p2 = new PointPlan(112,14);
 		PointPlan p3 = new PointPlan(43,3);
 		
-		Forme vide = new Triangles(); 
-		Forme normal = new Triangles("montagne1", p1,p2,p3);
+		try {
+			Forme vide = new Triangles();
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		Forme normal = null;
+		try {
+			normal = new Triangles("montagne1", p1,p2,p3);
+		} catch (PointPlanException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Forme copie1 = null;
 		try {
 			copie1 = new Triangles(normal);
-		} catch (TrianglesException e) {
+		} catch (TrianglesException | PointPlanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
 		try {
 			Forme copie3 = new Triangles("copie3",copie1);
-		} catch (TrianglesException e) {
+		} catch (TrianglesException | PointPlanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
@@ -47,7 +59,7 @@ Ardoise ardoise = new Ardoise();
 	{
         try 
         {
-            Thread.sleep(x); // Attendre 1 seconde (1000 millisecondes)
+            Thread.sleep(x); 
         } 
         catch (InterruptedException e) 
         {
