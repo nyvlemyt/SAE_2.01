@@ -21,9 +21,13 @@ public class Etoile extends FormesComposees{
 			this.setBranche4(new Chapeaux()) ;
 	}
 //Constructeur normal : 	
-	public Etoile(String nom, Chapeaux b1, Chapeaux b2, Chapeaux b3, Chapeaux b4)
+	public Etoile(String nom, Object o1, Object o2 , Object o3 , Object o4)
 	{
 			super(nom) ;
+			Chapeaux b1 = (Chapeaux) o1; 
+			Chapeaux b2 = (Chapeaux) o2; 
+			Chapeaux b3 = ( Chapeaux) o3;
+			Chapeaux b4 = (Chapeaux) o4; 
 			this.setBranche1(b1) ;
 			this.setBranche2(b2) ;
 			this.setBranche3(b3) ;

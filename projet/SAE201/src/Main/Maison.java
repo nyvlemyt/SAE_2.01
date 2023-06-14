@@ -20,9 +20,12 @@ public class Maison extends FormesComposees{
 	}
 
 //Constructeur normal : 
-	public Maison(String nom, Quadrilateres unePorte, Quadrilateres unContour, Chapeaux unToit)
+	public Maison(String nom, Object o1, Object o2 , Object o3)
 	{
 		super(nom);
+		Quadrilateres unePorte = (Quadrilateres) o1; 
+		Quadrilateres unContour = (Quadrilateres) o2;
+		Chapeaux unToit = (Chapeaux) o3; 
 		this.setPorte(unePorte);
 		this.setContour(unContour);
 		this.setToit(unToit); 

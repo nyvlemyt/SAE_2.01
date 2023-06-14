@@ -62,8 +62,7 @@ public class Chapeaux extends Forme {
 				this.setPoint2(new PointPlan(p3.getAbscisse() + p3.getAbscisse()/2, y_milieu));
 		}
 	}
-	
-	
+
 //Constructeurs par copie : 
 	public Chapeaux(Chapeaux nouvChapeaux)
 	{
