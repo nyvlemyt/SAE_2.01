@@ -19,31 +19,15 @@ public class Maison extends FormesComposees{
 		this.setToit(new Chapeaux()); 
 	}
 
-<<<<<<< HEAD
-	public Maison( String unNom, Quadrilateres unContour)
-	{
-		super(unNom);
-		this.setContour(unContour); 
-		
-		
-	}
-	
-	public Maison(String nom, Quadrilateres unePorte, Quadrilateres unContour, Chapeaux unToit)
-=======
 //Constructeur normal : 
-	public Maison(String nom, Quadrilateres unePorte, Quadrilateres leContour, Chapeaux leToit)
->>>>>>> 8dd2a9cb5d839e4ccfb53a07be492ac8edef4c9c
+	public Maison(String nom, Quadrilateres unePorte, Quadrilateres unContour, Chapeaux unToit)
 	{
 		super(nom);
 		this.setPorte(unePorte);
 		this.setContour(unContour);
 		this.setToit(unToit); 
 	}
-<<<<<<< HEAD
-	
-	//getters :
-	public Quadrilateres getContour() 
-=======
+
 // Constructeurs par copie : 
 	public Maison(Maison m)
 	{
@@ -54,7 +38,6 @@ public class Maison extends FormesComposees{
 	}
 	
 	public Maison(Object o)
->>>>>>> 8dd2a9cb5d839e4ccfb53a07be492ac8edef4c9c
 	{
 		super();
 		Maison m = (Maison) o;
@@ -137,7 +120,6 @@ public class Maison extends FormesComposees{
 		return porte ; 
 	}
 	
-	
 	@Override
 	public void deplacer(int arg0, int arg1) 
 	{
@@ -168,19 +150,7 @@ public class Maison extends FormesComposees{
 		return liste;
 	}
 	
-	@Override
-	public void deplacer(int arg0, int arg1) 
-	{
-		
-	}
-
-	@Override
-	public ArrayList<Segment> dessiner() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
+	
 //toString : 
 	public String toString()
 	{

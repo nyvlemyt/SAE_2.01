@@ -63,12 +63,9 @@ public class Chapeaux extends Forme {
 		}
 	}
 	
-<<<<<<< HEAD
-	public Chapeaux(Chapeaux nouvChapeaux)
-=======
+	
 //Constructeurs par copie : 
-	public Chapeaux(Chapeaux copie)
->>>>>>> 8dd2a9cb5d839e4ccfb53a07be492ac8edef4c9c
+	public Chapeaux(Chapeaux nouvChapeaux)
 	{
 		super(nouvChapeaux.getNomForme());
 		this.setPoint1(nouvChapeaux.getPoint1());
@@ -85,6 +82,7 @@ public class Chapeaux extends Forme {
 		this.setPoint3(copie.getPoint3());
 	}
 	
+
 //Constructeur par copie avec nouveaux nom :
 	public Chapeaux(String nom, Object o)
 	{

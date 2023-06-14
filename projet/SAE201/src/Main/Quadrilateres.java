@@ -31,13 +31,8 @@ public class Quadrilateres extends Forme {
 		this.setBasDroit(p0);
 	}
 	
-<<<<<<< HEAD
-	// Constructeur par copie : 
-	public Quadrilateres(Quadrilateres nouvQuadrilatères)
-=======
 //Constructeurs par copie : 
-	public Quadrilateres(Quadrilateres copie)
->>>>>>> 8dd2a9cb5d839e4ccfb53a07be492ac8edef4c9c
+	public Quadrilateres(Quadrilateres nouvQuadrilatères)
 	{
 		super(nouvQuadrilatères.getNomForme());
 		this.setHautGauche(nouvQuadrilatères.getHautGauche());
