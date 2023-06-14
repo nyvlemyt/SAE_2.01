@@ -100,6 +100,8 @@ public class TestArdoise {
 		ardoise.ajouterForme(oiseau3);
 		ardoise.ajouterForme(etoile);
 		
+		
+		
 
 		ardoise.test();
 		

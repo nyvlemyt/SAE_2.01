@@ -29,10 +29,38 @@ public class Etoile extends FormesComposees{
 			this.branche4 = b4 ;
 		}
 
+	public Chapeaux getBranche1() {
+		return branche1;
+	}
+	
+	public Chapeaux getBranche2() {
+		return branche2;
+	}
+	
+	public Chapeaux getBranche3() {
+		return branche3;
+	}
+	
+	public Chapeaux getBranche4() {
+		return branche4;
+	}
 
-	
-	
-	
+	public void setBranche1(Chapeaux nouvBranche1) {
+		this.branche1 = nouvBranche1;
+	}
+
+	public void setBranche2(Chapeaux nouvBranche2) {
+		this.branche2 = nouvBranche2;
+	}
+
+	public void setBranche3(Chapeaux nouvBranche3) {
+		this.branche3 = nouvBranche3;
+	}
+
+	public void setBranche4(Chapeaux nouvBranche4) {
+		this.branche4 = nouvBranche4;
+	}
+
 	@Override
 	public void deplacer(int arg0, int arg1) {
 		
@@ -62,38 +90,6 @@ public class Etoile extends FormesComposees{
 	    liste.add(new Segment(this.branche4.getPoint2(), this.branche4.getPoint3()));
 		
 		return liste ;
-	}
-
-	public Chapeaux getBranche1() {
-		return branche1;
-	}
-
-	public void setBranche1(Chapeaux nouvBranche1) {
-		this.branche1 = nouvBranche1;
-	}
-
-	public Chapeaux getBranche2() {
-		return branche2;
-	}
-
-	public void setBranche2(Chapeaux nouvBranche2) {
-		this.branche2 = nouvBranche2;
-	}
-
-	public Chapeaux getBranche3() {
-		return branche3;
-	}
-
-	public void setBranche3(Chapeaux nouvBranche3) {
-		this.branche3 = nouvBranche3;
-	}
-
-	public Chapeaux getBranche4() {
-		return branche4;
-	}
-
-	public void setBranche4(Chapeaux nouvBranche4) {
-		this.branche4 = nouvBranche4;
 	}
 
 }

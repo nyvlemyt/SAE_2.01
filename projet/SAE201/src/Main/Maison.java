@@ -18,34 +18,22 @@ public class Maison extends FormesComposees{
 		this.setToit(new Chapeaux()); 
 	}
 
-	public Maison( String unnom, Quadrilateres unContour)
+	public Maison( String unNom, Quadrilateres unContour)
 	{
-		super(unnom);
+		super(unNom);
 		this.setContour(unContour); 
 		
 		
 	}
 	
-	public Maison(String nom, Quadrilateres unePorte, Quadrilateres leContour, Chapeaux leToit)
+	public Maison(String nom, Quadrilateres unePorte, Quadrilateres unContour, Chapeaux unToit)
 	{
 		super(nom);
 		this.setPorte(unePorte);
-		this.setContour(leContour);
-		this.setToit(leToit); 
+		this.setContour(unContour);
+		this.setToit(unToit); 
 	}
 	
-	@Override
-	public void deplacer(int arg0, int arg1) 
-	{
-		
-	}
-
-	@Override
-	public ArrayList<Segment> dessiner() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	//getters :
 	public Quadrilateres getContour() 
 	{
@@ -76,6 +64,18 @@ public class Maison extends FormesComposees{
 	public void setToit(Chapeaux unToit) 
 	{
 		this.toit = unToit;
+	}
+	
+	@Override
+	public void deplacer(int arg0, int arg1) 
+	{
+		
+	}
+
+	@Override
+	public ArrayList<Segment> dessiner() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -31,13 +31,13 @@ public class Quadrilateres extends Forme {
 	}
 	
 	// Constructeur par copie : 
-	public Quadrilateres(Quadrilateres copie)
+	public Quadrilateres(Quadrilateres nouvQuadrilatères)
 	{
-		super(copie.getNomForme());
-		this.setHautGauche(copie.getHautGauche());
-		this.setBasGauche(copie.getBasGauche());
-		this.setHautDroit(copie.getHautDroit());
-		this.setBasDroit(copie.getBasDroit());
+		super(nouvQuadrilatères.getNomForme());
+		this.setHautGauche(nouvQuadrilatères.getHautGauche());
+		this.setBasGauche(nouvQuadrilatères.getBasGauche());
+		this.setHautDroit(nouvQuadrilatères.getHautDroit());
+		this.setBasDroit(nouvQuadrilatères.getBasDroit());
 	}
 	//getters : 
 	public PointPlan getHautGauche() 

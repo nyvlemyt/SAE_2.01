@@ -41,12 +41,12 @@ public class Chapeaux extends Forme {
 		
 	}
 	
-	public Chapeaux(Chapeaux copie)
+	public Chapeaux(Chapeaux nouvChapeaux)
 	{
-		super(copie.getNomForme());
-		this.setPoint1(copie.getPoint1());
-		this.setPoint2(copie.getPoint2());
-		this.setPoint3(copie.getPoint3());
+		super(nouvChapeaux.getNomForme());
+		this.setPoint1(nouvChapeaux.getPoint1());
+		this.setPoint2(nouvChapeaux.getPoint2());
+		this.setPoint3(nouvChapeaux.getPoint3());
 	}
 
 	//getters : 
