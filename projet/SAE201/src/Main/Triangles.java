@@ -30,18 +30,11 @@ public class Triangles extends Forme {
 	}
 	
 //Constructeurs par copie : 
-	public Triangles(Triangles nouvTriangles)
-	{
-		super(nouvTriangles.getNomForme());
-		this.setPoint1(nouvTriangles.getPoint1());
-		this.setPoint2(nouvTriangles.getPoint2());
-		this.setPoint3(nouvTriangles.getPoint3());	
-	}
-	
 	public Triangles(Object o)
 	{
 		super();
 		Triangles nouvTriangles = (Triangles) o; 
+		this.setNomForme(nouvTriangles.getNomForme());
 		this.setPoint1(nouvTriangles.getPoint1());
 		this.setPoint2(nouvTriangles.getPoint2());
 		this.setPoint3(nouvTriangles.getPoint3());	
@@ -100,8 +93,8 @@ public class Triangles extends Forme {
 	public String toString()
 	{
 		return super.toString() +"/n" 
-				+ "Point 1 : " + this.getPoint1() + "/n" 
-				+ "Point 2 : " + this.getPoint2() + "/n" 
-				+ "Point 3 : " + this.getPoint3() + "/n"  ;
+				+ "Point 1 : " + this.getPoint1() + "\n" 
+				+ "Point 2 : " + this.getPoint2() + "\n" 
+				+ "Point 3 : " + this.getPoint3() + "\n"  ;
 	}
 }

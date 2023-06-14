@@ -32,24 +32,17 @@ public class Quadrilateres extends Forme {
 	}
 	
 //Constructeurs par copie : 
-	public Quadrilateres(Quadrilateres nouvQuadrilatères)
+	public Quadrilateres(Object o) 
 	{
-		super(nouvQuadrilatères.getNomForme());
+		super();
+		Quadrilateres nouvQuadrilatères = (Quadrilateres) o ; 
+		this.setNomForme(nouvQuadrilatères.getNomForme());
 		this.setHautGauche(nouvQuadrilatères.getHautGauche());
 		this.setBasGauche(nouvQuadrilatères.getBasGauche());
 		this.setHautDroit(nouvQuadrilatères.getHautDroit());
 		this.setBasDroit(nouvQuadrilatères.getBasDroit());
 	}
 	
-	public Quadrilateres(Object o)
-	{
-		super();
-		Quadrilateres copie = (Quadrilateres) o; 
-		this.setHautGauche(copie.getHautGauche());
-		this.setBasGauche(copie.getBasGauche());
-		this.setHautDroit(copie.getHautDroit());
-		this.setBasDroit(copie.getBasDroit());
-	}
 	
 //Constructeur par copie avec nouveau nom : 
 	public Quadrilateres(String nom, Object o)
@@ -110,10 +103,10 @@ public class Quadrilateres extends Forme {
 	public String toString()
 	{
 		return super.toString() +"/n" 
-				+ "Point Haut Gauche : " + this.getHautGauche() + "/n" 
-				+ "Point Bas Gauche : " + this.getBasGauche()	+ "/n" 
-				+ "Point Haut Droit : " + this.getHautDroit() + "/n" 
-				+ "Point Bas Droit : " + this.getBasDroit() ; 
+				+ "Point Haut Gauche : " + this.getHautGauche() + "\n"
+				+ "Point Bas Gauche : " + this.getBasGauche()	+ "\n" 
+				+ "Point Haut Droit : " + this.getHautDroit() + "\n" 
+				+ "Point Bas Droit : " + this.getBasDroit() + "\n" ; 
 	}
 	
 }

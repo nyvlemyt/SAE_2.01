@@ -67,11 +67,11 @@ public class Chapeaux extends Forme {
 	public Chapeaux(Object o)
 	{
 		super();
-		Chapeaux nouv = (Chapeaux) o; 
-		//this.setNomForme(nouvChapeaux.getNomForme());
-		this.setPoint1(nouv.getPoint1());
-		this.setPoint2(nouv.getPoint2());
-		this.setPoint3(nouv.getPoint3());
+		Chapeaux nouvChapeaux = (Chapeaux) o; 
+		this.setNomForme(nouvChapeaux.getNomForme());
+		this.setPoint1(nouvChapeaux.getPoint1());
+		this.setPoint2(nouvChapeaux.getPoint2());
+		this.setPoint3(nouvChapeaux.getPoint3());
 	}
 
 	
@@ -127,8 +127,8 @@ public class Chapeaux extends Forme {
 	public String toString()
 	{
 		return super.toString() +"/n" 
-				+ "Point 1 : " + this.getPoint1() + "/n" 
-				+ "Point 2 : " + this.getPoint2() + "/n" 
-				+ "Point 3 : " + this.getPoint3() + "/n"  ;
+				+ "Point 1 : " + this.getPoint1() + "\n" 
+				+ "Point 2 : " + this.getPoint2() + "\n" 
+				+ "Point 3 : " + this.getPoint3() + "\n"  ;
 	}
 }

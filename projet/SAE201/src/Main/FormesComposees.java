@@ -20,7 +20,8 @@ public abstract class FormesComposees extends Forme{
 	
 	public String toString()
 	{
-		return super.toString() + "/n" 
-				+ "Je suis une forme composée"; 
+		return super.toString() + "\n" 
+				+ "Je suis une forme composée de type : " 
+				+ this.typeForme() + "\n" ; 
 	}
 }
