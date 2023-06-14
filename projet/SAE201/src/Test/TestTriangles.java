@@ -35,7 +35,7 @@ Ardoise ardoise = new Ardoise();
 		normal.setPoint3(p30);
 		System.out.println(normal);
 		
-		
+		ardoise.ajouterForme(vide);
 		ardoise.ajouterForme(normal); 
 		ardoise.ajouterForme(copie1);
 		ardoise.ajouterForme(copie2);

@@ -67,8 +67,8 @@ public class Etoile extends FormesComposees{
 			Quadrilateres q = (Quadrilateres) o; 
 			this.setBranche1(new Chapeaux("banche 1",q.getBasGauche(),q.getBasDroit(),1));
 			this.setBranche2(new Chapeaux("banche 2",q.getBasGauche(),q.getHautGauche(),0));
-			this.setBranche3(new Chapeaux("banche 1",q.getHautGauche(),q.getHautDroit(),0));
-			this.setBranche4(new Chapeaux("banche 1",q.getBasDroit(),q.getHautDroit(),1));
+			this.setBranche3(new Chapeaux("banche 3",q.getHautGauche(),q.getHautDroit(),0));
+			this.setBranche4(new Chapeaux("banche 4",q.getBasDroit(),q.getHautDroit(),1));
         } 
 	}
 	
@@ -143,10 +143,10 @@ public class Etoile extends FormesComposees{
 //toString : 
 	public String toString()
 	{
-		return super.toString() + "/n" 
-				+ "Ma Branche 1 : " + this.getBranche1().toString() + "/n"
-				+ "Ma Branche 2 : " + this.getBranche2().toString() + "/n"
-				+ "Ma Branche 3 : " + this.getBranche3().toString() + "/n"
+		return super.toString() + "\n" 
+				+ "Ma Branche 1 : " + this.getBranche1().toString() + "\n"
+				+ "Ma Branche 2 : " + this.getBranche2().toString() + "\n"
+				+ "Ma Branche 3 : " + this.getBranche3().toString() + "\n"
 				+ "Ma Branche 4 : " + this.getBranche4().toString() ;
 	}
 
