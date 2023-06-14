@@ -90,6 +90,7 @@ public class TestArdoise {
 	
 		FormesComposees etoile = new Etoile(null,branche1,branche2,branche3,branche4) ;
 		
+		
 		ardoise.ajouterForme(maison);
 		ardoise.ajouterForme(tour);
 		ardoise.ajouterForme(montagne1);
