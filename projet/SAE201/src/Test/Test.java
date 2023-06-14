@@ -22,6 +22,8 @@ public class Test {
 		PointPlan p4 = new PointPlan(7,10);
 		Forme corpsMaison = new Quadrilateres("Corps Maison", p3, p4);
 		Etoile e = new Etoile(corpsMaison, "étoile 1"); 
+		 
+		
 		
 //		Maison mais = new Maison("test", corpsMaison); 
 		ardoise.ajouterForme(e);
