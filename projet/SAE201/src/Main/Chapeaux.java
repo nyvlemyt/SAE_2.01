@@ -64,22 +64,16 @@ public class Chapeaux extends Forme {
 	}
 
 //Constructeurs par copie : 
-	public Chapeaux(Chapeaux nouvChapeaux)
-	{
-		super(nouvChapeaux.getNomForme());
-		this.setPoint1(nouvChapeaux.getPoint1());
-		this.setPoint2(nouvChapeaux.getPoint2());
-		this.setPoint3(nouvChapeaux.getPoint3());
-	}
-	
 	public Chapeaux(Object o)
 	{
 		super();
-		Chapeaux copie = (Chapeaux) o; 
-		this.setPoint1(copie.getPoint1());
-		this.setPoint2(copie.getPoint2());
-		this.setPoint3(copie.getPoint3());
+		Chapeaux nouv = (Chapeaux) o; 
+		//this.setNomForme(nouvChapeaux.getNomForme());
+		this.setPoint1(nouv.getPoint1());
+		this.setPoint2(nouv.getPoint2());
+		this.setPoint3(nouv.getPoint3());
 	}
+
 	
 
 //Constructeur par copie avec nouveaux nom :

@@ -36,6 +36,16 @@ public class Etoile extends FormesComposees{
 
 
 //Construteurs par copie : 
+	public Etoile(Etoile e)
+	{
+		super(); 
+		//e.getNomForme())
+		this.setBranche1(new Chapeaux(e.getBranche1()));
+		this.setBranche2(new Chapeaux(e.getBranche2()));
+		this.setBranche3(new Chapeaux(e.getBranche3()));
+		this.setBranche4(new Chapeaux(e.getBranche4()));
+	}
+	
 	public Etoile(Object o)
 	{
 		super();
@@ -61,7 +71,7 @@ public class Etoile extends FormesComposees{
 			this.setBranche3(new Chapeaux("banche 1",q.getHautGauche(),q.getHautDroit(),0));
 			this.setBranche4(new Chapeaux("banche 1",q.getBasDroit(),q.getHautDroit(),1));
         } 
-		else if (o instanceof Etoile) 
+		if (o instanceof Etoile) 
 		{
             // Code à exécuter si o est un objet de type Etoile
         	Etoile e = (Etoile) o; 
@@ -106,6 +116,8 @@ public class Etoile extends FormesComposees{
 		Chapeaux nouvBranche = (Chapeaux) o; 
 		this.branche2 = nouvBranche;
 	}
+
+	
 
 	@Override
 	public void deplacer(int arg0, int arg1) 

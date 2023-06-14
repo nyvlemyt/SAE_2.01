@@ -21,7 +21,7 @@ public class Test {
 		PointPlan p3 = new PointPlan(8,12);
 		PointPlan p4 = new PointPlan(7,10);
 		Forme corpsMaison = new Quadrilateres("Corps Maison", p3, p4);
-		Etoile e = new Etoile(corpsMaison, "étoile 1"); 
+		Etoile e = new Etoile("étoile 1",corpsMaison); 
 		 
 		
 		
