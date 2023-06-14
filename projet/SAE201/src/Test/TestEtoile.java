@@ -48,25 +48,18 @@ public class TestEtoile {
 
 		System.out.println(deQuad); 
 		
-		ardoise.ajouterForme(vide);
-		ardoise.ajouterForme(aaa);
-		ardoise.ajouterForme(copie1);
-		ardoise.ajouterForme(copie2);	
+		ardoise.ajouterForme(aaa);	
 		ardoise.ajouterForme(deQuad);
 		
 		ardoise.dessinerGraphique();
-		
-		attendreUneSeconde(); 
-	
-		
+		attendreSecondes(3000); 
 		deQuad.deplacer(10, 10);
-		System.out.println(deQuad);
 		ardoise.dessinerGraphique();
 	}
 	
-	public static void attendreUneSeconde() {
+	public static void attendreSecondes(int x) {
         try {
-            Thread.sleep(3000); // Attendre 1 seconde (1000 millisecondes)
+            Thread.sleep(x); // Attendre 1 seconde (1000 millisecondes)
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

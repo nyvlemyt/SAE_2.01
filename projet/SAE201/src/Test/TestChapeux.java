@@ -24,22 +24,31 @@ public class TestChapeux {
 		Forme invSens2 = new Chapeaux("tect2", p2,p4,0);
 		
 		Forme copie1 = new Chapeaux(normal); 
-		Forme copie3 = new Chapeaux("copie3",copie1); 
+		Forme copie2 = new Chapeaux("copie3",copie1); 
 
 		System.out.println(copie1); 
 		
-		
-		ardoise.ajouterForme(vide);
 		ardoise.ajouterForme(normal);
 		ardoise.ajouterForme(sens);
 		ardoise.ajouterForme(sens2);
 		ardoise.ajouterForme(invSens);
 		ardoise.ajouterForme(invSens2); 
-		ardoise.ajouterForme(copie1);
-		ardoise.ajouterForme(copie3);
-		
-		ardoise.test();
+
+		ardoise.dessinerGraphique();
+		attendreSecondes(3000);
+		sens.deplacer(-10, -10);
+		ardoise.dessinerGraphique();
 
 	}
-
+	public static void attendreSecondes(int x) 
+	{
+        try 
+        {
+            Thread.sleep(x); // Attendre 1 seconde (1000 millisecondes)
+        } 
+        catch (InterruptedException e) 
+        {
+            e.printStackTrace();
+        }
+	}
 }

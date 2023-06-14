@@ -126,7 +126,8 @@ public class Chapeaux extends Forme {
 //toString : 
 	public String toString()
 	{
-		return super.toString() +"\n"
+		return super.toString() +"\n" 
+				+ "type : " + this.typeForme()  +"\n"
 				+ "Point 1 : " + this.getPoint1() + "\n" 
 				+ "Point 2 : " + this.getPoint2() + "\n" 
 				+ "Point 3 : " + this.getPoint3() + "\n"  ;

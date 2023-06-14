@@ -17,13 +17,13 @@ public class TestArdoise {
 		Forme tour = new Quadrilateres("Tour",p1,p2);
 
 		//Corps Maison
-		PointPlan p3 = new PointPlan(80,198);
-		PointPlan p4 = new PointPlan(180,140);
+		PointPlan p3 = new PointPlan(80,140);
+		PointPlan p4 = new PointPlan(180,198);
 		Forme corpsMaison = new Quadrilateres("Corps Maison", p3, p4);
 		
 		//Porte Maison 
-		PointPlan p5 = new PointPlan(120,198);
-		PointPlan p6 = new PointPlan(140,170);
+		PointPlan p5 = new PointPlan(120,170);
+		PointPlan p6 = new PointPlan(140,198);
 		Forme porteMaison = new Quadrilateres("Porte Maison", p5, p6);
 		
 		//Toit maison
@@ -32,7 +32,7 @@ public class TestArdoise {
 		PointPlan p15 = new PointPlan(180,140);
 		Forme toitMaison = new Chapeaux("Toit maison", p13, p14, p15) ;
 		
-		FormesComposees maison = new Maison(null, porteMaison, corpsMaison, toitMaison);
+		FormesComposees maison = new Maison("Maison", porteMaison, corpsMaison, toitMaison);
 		
 		//Montagne 1
 		PointPlan p7 = new PointPlan(3,14);
@@ -88,7 +88,7 @@ public class TestArdoise {
 		PointPlan p36 = new PointPlan(170,52);
 		Forme branche4 = new Chapeaux("branche 4", p34, p35, p36) ;
 	
-		FormesComposees etoile = new Etoile(null,branche1,branche2,branche3,branche4) ;
+		FormesComposees etoile = new Etoile("Etoile",branche1,branche2,branche3,branche4) ;
 		
 		
 		ardoise.ajouterForme(maison);
@@ -101,8 +101,6 @@ public class TestArdoise {
 		ardoise.ajouterForme(etoile);
 		
 		
-		
-
 		ardoise.test();
 		
 	}

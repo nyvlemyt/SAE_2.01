@@ -102,7 +102,8 @@ public class Quadrilateres extends Forme {
 //toString : 
 	public String toString()
 	{
-		return super.toString() +"\n"
+		return super.toString() + "\n"
+				+ "type : "+ this.typeForme() +"\n"
 				+ "Point Haut Gauche : " + this.getHautGauche() + "\n"
 				+ "Point Bas Gauche : " + this.getBasGauche()	+ "\n" 
 				+ "Point Haut Droit : " + this.getHautDroit() + "\n" 

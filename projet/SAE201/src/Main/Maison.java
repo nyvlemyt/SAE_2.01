@@ -142,7 +142,7 @@ public class Maison extends FormesComposees{
 		
 	// Porte : 
 		liste.add(new Segment(this.porte.getHautGauche(),this.porte.getBasGauche()));
-		liste.add(new Segment(this.porte.getBasGauche(),this.porte.getBasDroit()));
+		liste.add(new Segment(this.porte.getHautGauche(),this.porte.getHautDroit()));
 		liste.add(new Segment(this.porte.getHautDroit(),this.porte.getBasDroit()));
 		
 	// Toit : 
