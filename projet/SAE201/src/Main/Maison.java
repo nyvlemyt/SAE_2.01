@@ -43,7 +43,7 @@ public class Maison extends FormesComposees{
 	}
 
 // Constructeur avec nouveau nom : 
-	public Maison(Object o, String nom)
+	public Maison(String nom, Object o)
 	{
 		super(nom);
 		if (o instanceof Maison) 
