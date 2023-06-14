@@ -30,15 +30,7 @@ public class Etoile extends FormesComposees{
 			this.setBranche4(b4) ;
 	}
 
-<<<<<<< HEAD
-	public Chapeaux getBranche1() {
-		return branche1;
-	}
-	
-	public Chapeaux getBranche2() {
-		return branche2;
-	}
-=======
+
 //Construteurs par copie : 
 	public Etoile(Etoile e)
 	{
@@ -98,31 +90,8 @@ public class Etoile extends FormesComposees{
 	public void setBranche3(Chapeaux nouvBranche3) {this.branche3 = nouvBranche3;}
 
 	public void setBranche4(Chapeaux nouvBranche4) {this.branche4 = nouvBranche4;}
->>>>>>> 8dd2a9cb5d839e4ccfb53a07be492ac8edef4c9c
+
 	
-	public Chapeaux getBranche3() {
-		return branche3;
-	}
-	
-	public Chapeaux getBranche4() {
-		return branche4;
-	}
-
-	public void setBranche1(Chapeaux nouvBranche1) {
-		this.branche1 = nouvBranche1;
-	}
-
-	public void setBranche2(Chapeaux nouvBranche2) {
-		this.branche2 = nouvBranche2;
-	}
-
-	public void setBranche3(Chapeaux nouvBranche3) {
-		this.branche3 = nouvBranche3;
-	}
-
-	public void setBranche4(Chapeaux nouvBranche4) {
-		this.branche4 = nouvBranche4;
-	}
 
 	@Override
 	public void deplacer(int arg0, int arg1) 
@@ -155,9 +124,6 @@ public class Etoile extends FormesComposees{
 		
 		return liste ;
 	}
-<<<<<<< HEAD
-=======
-	
 	
 //toString : 
 	public String toString()
@@ -168,6 +134,6 @@ public class Etoile extends FormesComposees{
 				+ "Ma Branche 3 : " + this.getBranche3().toString() + "/n"
 				+ "Ma Branche 4 : " + this.getBranche4().toString() ;
 	}
->>>>>>> 8dd2a9cb5d839e4ccfb53a07be492ac8edef4c9c
+
 
 }
