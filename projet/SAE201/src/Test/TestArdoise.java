@@ -26,6 +26,14 @@ public class TestArdoise {
 		PointPlan p6 = new PointPlan(140,170);
 		Forme porteMaison = new Quadrilateres("Porte Maison", p5, p6);
 		
+		//Toit maison
+		PointPlan p13 = new PointPlan(80,140);
+		PointPlan p14 = new PointPlan(130,100);
+		PointPlan p15 = new PointPlan(180,140);
+		Forme toitMaison = new Chapeaux("Toit maison", p13, p14, p15) ;
+		
+		FormesComposees maison = new Maison(null, porteMaison, corpsMaison, toitMaison);
+		
 		//Montagne 1
 		PointPlan p7 = new PointPlan(3,14);
 		PointPlan p8 = new PointPlan(112,14);
@@ -37,12 +45,6 @@ public class TestArdoise {
 		PointPlan p11 = new PointPlan(166,3);
 		PointPlan p12 = new PointPlan(172,7);
 		Forme montagne2 = new Triangles("Montagne 2", p10, p11, p12) ;
-		
-		//Toit maison
-		PointPlan p13 = new PointPlan(80,140);
-		PointPlan p14 = new PointPlan(130,100);
-		PointPlan p15 = new PointPlan(180,140);
-		Forme toitMaison = new Chapeaux("Toit maison", p13, p14, p15) ;
 		
 		//Oiseau 1
 		PointPlan p16 = new PointPlan(118,13);
@@ -66,35 +68,32 @@ public class TestArdoise {
 		PointPlan p25 = new PointPlan(170,52);
 		PointPlan p26 = new PointPlan(173,45);
 		PointPlan p27 = new PointPlan(177,52);
-		Chapeaux branche1 = new Chapeaux("branche 1", p25, p26, p27) ;
+		Forme branche1 = new Chapeaux("branche 1", p25, p26, p27) ;
 
 		//branche 2
 		PointPlan p28 = new PointPlan(177,52);
 		PointPlan p29 = new PointPlan(184,57);
 		PointPlan p30 = new PointPlan(177,60);
-		Chapeaux branche2 = new Chapeaux("branche 2", p28, p29, p30) ;
+		Forme branche2 = new Chapeaux("branche 2", p28, p29, p30) ;
 
 		//branche 3
 		PointPlan p31 = new PointPlan(170,60);
 		PointPlan p32 = new PointPlan(174,66);
 		PointPlan p33 = new PointPlan(177,60);
-		Chapeaux branche3 = new Chapeaux("branche 3", p31, p32, p33) ;
+		Forme branche3 = new Chapeaux("branche 3", p31, p32, p33) ;
 
 		//branche 4
 		PointPlan p34 = new PointPlan(170,60);
 		PointPlan p35 = new PointPlan(164,57);
 		PointPlan p36 = new PointPlan(170,52);
-		Chapeaux branche4 = new Chapeaux("branche 4", p34, p35, p36) ;
+		Forme branche4 = new Chapeaux("branche 4", p34, p35, p36) ;
 	
 		FormesComposees etoile = new Etoile(null,branche1,branche2,branche3,branche4) ;
 		
+		ardoise.ajouterForme(maison);
 		ardoise.ajouterForme(tour);
-		ardoise.ajouterForme(corpsMaison);
-		ardoise.ajouterForme(porteMaison); 
-		ardoise.ajouterForme(porteMaison);
 		ardoise.ajouterForme(montagne1);
 		ardoise.ajouterForme(montagne2);
-		ardoise.ajouterForme(toitMaison);
 		ardoise.ajouterForme(oiseau1);
 		ardoise.ajouterForme(oiseau2);
 		ardoise.ajouterForme(oiseau3);
