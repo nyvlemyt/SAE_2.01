@@ -39,7 +39,7 @@ public class Chapeaux extends Forme {
  	* si @sens == 1; le chapeau aura le point central au dessus des deux autres (y<) ou à gauche (x<)
  	* sinon, il sera en dessous ou à droite
  
- 	* Ce constructeur est utile pour la classe Maison et si on veut creer une étoile à partir d'un quadrilatères
+ 	* Ce constructeur est utile pour la classe Maison et si on veut creer une étoile à partir de 4 points
  */
 	public Chapeaux(String nom, PointPlan p1, PointPlan p3, int sens) throws ChapeauxException, PointPlanException
 	{
@@ -76,9 +76,9 @@ public class Chapeaux extends Forme {
 		try {
 		Chapeaux nouvChapeaux = (Chapeaux) o; 
 		this.setNomForme(nouvChapeaux.getNomForme());
-		this.setPoint1(nouvChapeaux.getPoint1());
-		this.setPoint2(nouvChapeaux.getPoint2());
-		this.setPoint3(nouvChapeaux.getPoint3());
+		this.setPoint1(new PointPlan(nouvChapeaux.getPoint1().getAbscisse(),nouvChapeaux.getPoint1().getOrdonnee()));
+		this.setPoint2(new PointPlan(nouvChapeaux.getPoint2().getAbscisse(),nouvChapeaux.getPoint2().getOrdonnee()));
+		this.setPoint3(new PointPlan(nouvChapeaux.getPoint3().getAbscisse(),nouvChapeaux.getPoint3().getOrdonnee()));
 		}
 		catch (ClassCastException e) {
 			throw new ChapeauxException("L'objet passé en paramètre n'est pas de type Chapeaux.");
@@ -91,10 +91,10 @@ public class Chapeaux extends Forme {
 	{
 		super(nom);
 		try {
-		Chapeaux copie = (Chapeaux) o; 
-		this.setPoint1(copie.getPoint1());
-		this.setPoint2(copie.getPoint2());
-		this.setPoint3(copie.getPoint3());
+		Chapeaux nouvChapeaux = (Chapeaux) o; 
+		this.setPoint1(new PointPlan(nouvChapeaux.getPoint1().getAbscisse(),nouvChapeaux.getPoint1().getOrdonnee()));
+		this.setPoint2(new PointPlan(nouvChapeaux.getPoint2().getAbscisse(),nouvChapeaux.getPoint2().getOrdonnee()));
+		this.setPoint3(new PointPlan(nouvChapeaux.getPoint3().getAbscisse(),nouvChapeaux.getPoint3().getOrdonnee()));
 		}
 		catch (ClassCastException e) {
 			throw new ChapeauxException("L'objet passé en paramètre n'est pas de type Chapeaux.");

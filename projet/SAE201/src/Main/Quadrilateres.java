@@ -38,12 +38,12 @@ public class Quadrilateres extends Forme {
 	{
 		super();
 		try {
-		Quadrilateres nouvQuadrilatères = (Quadrilateres) o ; 
-		this.setNomForme(nouvQuadrilatères.getNomForme());
-		this.setHautGauche(nouvQuadrilatères.getHautGauche());
-		this.setBasGauche(nouvQuadrilatères.getBasGauche());
-		this.setHautDroit(nouvQuadrilatères.getHautDroit());
-		this.setBasDroit(nouvQuadrilatères.getBasDroit());
+		Quadrilateres nouvQuadrilateres = (Quadrilateres) o ; 
+		this.setNomForme(nouvQuadrilateres.getNomForme());
+		this.setHautGauche(new PointPlan(nouvQuadrilateres.getHautGauche().getAbscisse(),nouvQuadrilateres.getHautGauche().getOrdonnee()));
+		this.setBasGauche(new PointPlan(nouvQuadrilateres.getBasGauche().getAbscisse(),nouvQuadrilateres.getBasGauche().getOrdonnee()));
+		this.setHautDroit(new PointPlan(nouvQuadrilateres.getHautDroit().getAbscisse(),nouvQuadrilateres.getHautDroit().getOrdonnee()));
+		this.setBasDroit(new PointPlan(nouvQuadrilateres.getBasDroit().getAbscisse(),nouvQuadrilateres.getBasDroit().getOrdonnee()));
 		 } 
 		catch (ClassCastException e) {
 		        throw new QuadrilateresException("L'objet passé en paramètre n'est pas de type Quadrilateres.");
@@ -56,11 +56,11 @@ public class Quadrilateres extends Forme {
 	{
 		super(nom);
 		try {
-		Quadrilateres copie = (Quadrilateres) o; 
-		this.setHautGauche(copie.getHautGauche());
-		this.setBasGauche(copie.getBasGauche());
-		this.setHautDroit(copie.getHautDroit());
-		this.setBasDroit(copie.getBasDroit());
+		Quadrilateres nouvQuadrilateres = (Quadrilateres) o; 
+		this.setHautGauche(new PointPlan(nouvQuadrilateres.getHautGauche().getAbscisse(),nouvQuadrilateres.getHautGauche().getOrdonnee()));
+		this.setBasGauche(new PointPlan(nouvQuadrilateres.getBasGauche().getAbscisse(),nouvQuadrilateres.getBasGauche().getOrdonnee()));
+		this.setHautDroit(new PointPlan(nouvQuadrilateres.getHautDroit().getAbscisse(),nouvQuadrilateres.getHautDroit().getOrdonnee()));
+		this.setBasDroit(new PointPlan(nouvQuadrilateres.getBasDroit().getAbscisse(),nouvQuadrilateres.getBasDroit().getOrdonnee()));
 		 } 
 		catch (ClassCastException e) {
 		        throw new QuadrilateresException("L'objet passé en paramètre n'est pas de type Quadrilateres.");

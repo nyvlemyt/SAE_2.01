@@ -38,9 +38,9 @@ public class Triangles extends Forme {
 		try {
 		Triangles nouvTriangles = (Triangles) o; 
 		this.setNomForme(nouvTriangles.getNomForme());
-		this.setPoint1(nouvTriangles.getPoint1());
-		this.setPoint2(nouvTriangles.getPoint2());
-		this.setPoint3(nouvTriangles.getPoint3());	
+		this.setPoint1(new PointPlan(nouvTriangles.getPoint1().getAbscisse(),nouvTriangles.getPoint1().getOrdonnee()));
+		this.setPoint2(new PointPlan(nouvTriangles.getPoint2().getAbscisse(),nouvTriangles.getPoint2().getOrdonnee()));
+		this.setPoint3(new PointPlan(nouvTriangles.getPoint3().getAbscisse(),nouvTriangles.getPoint3().getOrdonnee()));	
 		}
 		catch (ClassCastException e) {
 			throw new TrianglesException("L'objet passé en paramètre n'est pas de type Triangles.");
@@ -53,9 +53,9 @@ public class Triangles extends Forme {
 		super(nom);
 		try {
 		Triangles nouvTriangles = (Triangles) o; 
-		this.setPoint1(nouvTriangles.getPoint1());
-		this.setPoint2(nouvTriangles.getPoint2());
-		this.setPoint3(nouvTriangles.getPoint3());	
+		this.setPoint1(new PointPlan(nouvTriangles.getPoint1().getAbscisse(),nouvTriangles.getPoint1().getOrdonnee()));
+		this.setPoint2(new PointPlan(nouvTriangles.getPoint2().getAbscisse(),nouvTriangles.getPoint2().getOrdonnee()));
+		this.setPoint3(new PointPlan(nouvTriangles.getPoint3().getAbscisse(),nouvTriangles.getPoint3().getOrdonnee()));	
 		}
 		catch (ClassCastException e) {
 			throw new TrianglesException("L'objet passé en paramètre n'est pas de type Triangles.");
