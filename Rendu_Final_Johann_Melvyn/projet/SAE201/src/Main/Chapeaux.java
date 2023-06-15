@@ -39,7 +39,7 @@ public class Chapeaux extends Forme {
  	* si @sens == 1; le chapeau aura le point central au dessus des deux autres (y<) ou à gauche (x<)
  	* sinon, il sera en dessous ou à droite
  
- 	* Ce constructeur est utile pour la classe Maison et si on veut creer une étoile à partir de 4 points
+ 	* Ce constructeur est utile pour la classe Maison et si on veut creer une étoile à partir d'un quadrilatères
  */
 	public Chapeaux(String nom, PointPlan p1, PointPlan p3, int sens) throws ChapeauxException, PointPlanException
 	{
