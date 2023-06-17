@@ -152,9 +152,9 @@ public class Maison extends FormesComposees{
 	@Override
 	public void deplacer(int arg0, int arg1) 
 	{
-		this.contour.deplacer(arg0, arg1);
-		this.toit.deplacer(arg0, arg1);
-		this.porte.deplacer(arg0, arg1);
+		this.getContour().deplacer(arg0, arg1);
+		this.getToit().deplacer(arg0, arg1);
+		this.getPorte().deplacer(arg0, arg1);
 	}
 	
 	@Override
@@ -162,19 +162,19 @@ public class Maison extends FormesComposees{
 	{
 		ArrayList<Segment> liste = new ArrayList<Segment>(9);
 	// Contour : 
-		liste.add(new Segment(this.contour.getHautGauche(),this.contour.getBasGauche()));
-		liste.add(new Segment(this.contour.getHautGauche(),this.contour.getHautDroit()));
-		liste.add(new Segment(this.contour.getBasGauche(),this.contour.getBasDroit()));
-		liste.add(new Segment(this.contour.getHautDroit(),this.contour.getBasDroit()));
+		liste.add(new Segment(this.getContour().getHautGauche(),this.getContour().getBasGauche()));
+		liste.add(new Segment(this.getContour().getHautGauche(),this.getContour().getHautDroit()));
+		liste.add(new Segment(this.getContour().getBasGauche(),this.getContour().getBasDroit()));
+		liste.add(new Segment(this.getContour().getHautDroit(),this.getContour().getBasDroit()));
 		
 	// Porte : 
-		liste.add(new Segment(this.porte.getHautGauche(),this.porte.getBasGauche()));
-		liste.add(new Segment(this.porte.getHautGauche(),this.porte.getHautDroit()));
-		liste.add(new Segment(this.porte.getHautDroit(),this.porte.getBasDroit()));
+		liste.add(new Segment(this.getPorte().getHautGauche(),this.getPorte().getBasGauche()));
+		liste.add(new Segment(this.getPorte().getHautGauche(),this.getPorte().getHautDroit()));
+		liste.add(new Segment(this.getPorte().getHautDroit(),this.getPorte().getBasDroit()));
 		
 	// Toit : 
-		liste.add(new Segment(this.toit.getPoint1(),this.toit.getPoint2()));
-		liste.add(new Segment(this.toit.getPoint3(),this.toit.getPoint2()));
+		liste.add(new Segment(this.getToit().getPoint1(),this.getToit().getPoint2()));
+		liste.add(new Segment(this.getToit().getPoint3(),this.getToit().getPoint2()));
 	
 		return liste;
 	}

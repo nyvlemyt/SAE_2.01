@@ -129,20 +129,20 @@ public class Quadrilateres extends Forme {
 	@Override
 	public void deplacer(int arg0, int arg1) 
 	{
-		this.hautGauche.deplacer(arg0, arg1);
-		this.basGauche.deplacer(arg0, arg1);
-		this.hautDroit.deplacer(arg0, arg1);
-		this.basDroit.deplacer(arg0, arg1);
+		this.getHautGauche().deplacer(arg0, arg1);
+		this.getBasGauche().deplacer(arg0, arg1);
+		this.getHautDroit().deplacer(arg0, arg1);
+		this.getBasDroit().deplacer(arg0, arg1);
 	}
 
 	@Override
 	public ArrayList<Segment> dessiner() 
 	{
 		ArrayList<Segment> liste = new ArrayList<Segment>(4);
-		liste.add(new Segment(this.hautGauche,this.basGauche));
-		liste.add(new Segment(this.hautGauche,this.hautDroit));
-		liste.add(new Segment(this.basGauche,this.basDroit));
-		liste.add(new Segment(this.hautDroit,this.basDroit));
+		liste.add(new Segment(this.getHautGauche(),this.getBasGauche()));
+		liste.add(new Segment(this.getHautGauche(),this.getHautDroit()));
+		liste.add(new Segment(this.getBasGauche(),this.getBasDroit()));
+		liste.add(new Segment(this.getHautDroit(),this.getBasDroit()));
 		return liste;
 	}
 

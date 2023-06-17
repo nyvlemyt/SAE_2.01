@@ -144,17 +144,17 @@ public class Chapeaux extends Forme {
 	@Override
 	public void deplacer(int arg0, int arg1) 
 	{	
-		this.point1.deplacer(arg0, arg1);
-		this.point2.deplacer(arg0, arg1);
-		this.point3.deplacer(arg0, arg1);
+		this.getPoint1().deplacer(arg0, arg1);
+		this.getPoint2().deplacer(arg0, arg1);
+		this.getPoint3().deplacer(arg0, arg1);
 	}
 
 	@Override
 	public ArrayList<Segment> dessiner() 
 	{
 		ArrayList<Segment> liste = new ArrayList<Segment>(2) ;
-		liste.add(new Segment(this.point1,this.point2)) ;
-		liste.add(new Segment(this.point2,this.point3)) ;
+		liste.add(new Segment(this.getPoint1(),this.getPoint2())) ;
+		liste.add(new Segment(this.getPoint2(),this.getPoint3())) ;
 		return liste ;
 	}
 

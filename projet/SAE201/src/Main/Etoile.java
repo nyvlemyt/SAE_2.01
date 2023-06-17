@@ -147,10 +147,10 @@ public class Etoile extends FormesComposees{
 	@Override
 	public void deplacer(int arg0, int arg1) 
 	{
-		this.branche1.deplacer(arg0, arg1);
-		this.branche2.deplacer(arg0, arg1);
-		this.branche3.deplacer(arg0, arg1);
-		this.branche4.deplacer(arg0, arg1);
+		this.getBranche1().deplacer(arg0, arg1);
+		this.getBranche2().deplacer(arg0, arg1);
+		this.getBranche3().deplacer(arg0, arg1);
+		this.getBranche4().deplacer(arg0, arg1);
 	}
 
 	@Override
@@ -158,20 +158,20 @@ public class Etoile extends FormesComposees{
 	{
 		ArrayList<Segment> liste = new ArrayList<Segment>(8) ;
 	// Ajouter les segments de la branche 1
-	    liste.add(new Segment(this.branche1.getPoint1(), this.branche1.getPoint2()));
-	    liste.add(new Segment(this.branche1.getPoint2(), this.branche1.getPoint3()));
+	    liste.add(new Segment(this.getBranche1().getPoint1(), this.getBranche1().getPoint2()));
+	    liste.add(new Segment(this.getBranche1().getPoint2(), this.getBranche1().getPoint3()));
 
 	// Ajouter les segments de la branche 2
-	    liste.add(new Segment(this.branche2.getPoint1(), this.branche2.getPoint2()));
-	    liste.add(new Segment(this.branche2.getPoint2(), this.branche2.getPoint3()));
+	    liste.add(new Segment(this.getBranche2().getPoint1(), this.getBranche2().getPoint2()));
+	    liste.add(new Segment(this.getBranche2().getPoint2(), this.getBranche2().getPoint3()));
 
 	// Ajouter les segments de la branche 3
-	    liste.add(new Segment(this.branche3.getPoint1(), this.branche3.getPoint2()));
-	    liste.add(new Segment(this.branche3.getPoint2(), this.branche3.getPoint3()));
+	    liste.add(new Segment(this.getBranche3().getPoint1(), this.getBranche3().getPoint2()));
+	    liste.add(new Segment(this.getBranche3().getPoint2(), this.getBranche3().getPoint3()));
 
 	// Ajouter les segments de la branche 4
-	    liste.add(new Segment(this.branche4.getPoint1(), this.branche4.getPoint2()));
-	    liste.add(new Segment(this.branche4.getPoint2(), this.branche4.getPoint3()));
+	    liste.add(new Segment(this.getBranche4().getPoint1(), this.getBranche4().getPoint2()));
+	    liste.add(new Segment(this.getBranche4().getPoint2(), this.getBranche4().getPoint3()));
 		
 		return liste ;
 	}
